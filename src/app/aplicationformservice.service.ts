@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApplicationformserviceService {
 
-  private apiUrl = 'http://localhost:8000/api/registration/create';  // URL de la API
+  private apiUrl = 'https://wild-summer-camp.onrender.com/api/registration/create';  // URL de la API
 
   constructor(private http: HttpClient) {}
 
