@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Inscripciones Pendientes</h2>
+  
+    <!-- Contenedor de las inscripciones pendientes -->
+    <div *ngIf="pendingRegistrations && pendingRegistrations.length">
+      <div class="registration-card-container">
+        <div class="registration-card" *ngFor="let registration of pendingRegistrations">
+          <div class="registration-header">
+            <h4>Inscripción ID: {{ registration.id }}</h4>
+          </div>
+          <div class="registration-details">
+            <p><strong>RUT:</strong> {{ registration.rut }}</p>
+            <p><strong>Teléfono:</strong> {{ registration.phone_number }}</p>
+            <p><strong>Condición Médica:</strong> {{ registration.medical_condition ? 'Sí' : 'No' }}</p>
+            <p><strong>Estado:</strong> {{ registration.status }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

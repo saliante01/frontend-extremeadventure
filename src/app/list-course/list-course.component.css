@@ -1,0 +1,39 @@
+/* Asegúrate de que el contenedor ocupe el 100% del tamaño disponible */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Esto asegura que los elementos se alineen desde la parte superior */
+    align-items: center; /* Esto asegura que los elementos se centren horizontalmente */
+  }
+  
+  /* Para el formulario, ocupamos el 100% del ancho disponible */
+  form {
+    width: 100%;
+    max-width: 600px; /* Puedes ajustar este valor para limitar el ancho del formulario */
+    margin: 20px 0;
+  }
+  
+  /* Para los registros, ocupamos el 100% del ancho disponible */
+  div.mt-3 {
+    width: 100%;
+    max-width: 600px; /* Limitar el ancho de la lista de registros */
+  }
+  
+  /* Opcional: Si quieres que los registros ocupen todo el alto disponible dentro del contenedor */
+  .card {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  /* Si quieres que la pantalla de información ocupe todo el espacio disponible, puedes hacer que ocupe al menos el 100% de la altura */
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container {
+    min-height: 100vh; /* Asegura que el componente ocupe al menos la altura de la ventana del navegador */
+  }
+  

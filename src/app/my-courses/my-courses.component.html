@@ -1,0 +1,37 @@
+<div class="container-fluid full-height">
+  <h2>Semanas Registradas</h2>
+
+  <!-- Indicador de carga -->
+  <div *ngIf="loading" class="spinner-border" role="status">
+    <span class="visually-hidden">Cargando...</span>
+  </div>
+
+  <!-- Contenedor de las semanas registradas -->
+  <div *ngIf="!loading && registeredWeeks && registeredWeeks.length">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let week of registeredWeeks">
+        <div class="card mb-4 full-height">
+          <div class="card-header">
+            <h5>Semana ID: {{ week.id }}</h5>
+          </div>
+          <div class="card-body">
+            <p><strong>Fecha de inicio:</strong> {{ week.start_date }}</p>
+            <p><strong>Fecha de término:</strong> {{ week.end_date }}</p>
+            <p><strong>Precio:</strong> ${{ week.price | number }}</p>
+            <p><strong>Capacidad:</strong> {{ week.capacity }}</p>
+            <p><strong>Lugares disponibles:</strong> {{ week.available_spots }}</p>
+            <p><strong>Estado:</strong> {{ week.is_full ? 'Completo' : 'Disponible' }}</p>
+
+            <!-- Botón para ver actividades -->
+            <button (click)="goToActivities(week.id)" class="btn btn-primary">Ver actividades</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensaje si no hay semanas registradas -->
+  <div *ngIf="!loading && !registeredWeeks.length">
+    <p>No tienes semanas registradas.</p>
+  </div>
+</div>

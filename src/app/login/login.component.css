@@ -1,0 +1,91 @@
+.login-container {
+  display: grid; /* Usamos Grid para dividir el contenedor en dos columnas */
+  grid-template-columns: 1fr 1fr; /* Dos columnas, cada una ocupa el 50% */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  width: 100%;
+  margin: 0; /* Elimina los márgenes */
+  padding: 0; /* Elimina los márgenes internos */
+}
+
+/* Imagen de fondo */
+.background-image {
+  width: 100%; /* Ocupa el 100% del ancho de su celda */
+  height: 100%; /* Ocupa el 100% del alto de su celda */
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  z-index: -1; /* Coloca la imagen debajo del formulario */
+}
+
+/* Contenedor del formulario */
+.form-container {
+  display: flex;
+  flex-direction: column; /* Los elementos dentro del formulario están en columna */
+  justify-content: center; /* Centra el formulario verticalmente */
+  align-items: center; /* Centra el formulario horizontalmente */
+  height: 100%; /* El formulario ocupa el 100% de la altura */
+  padding: 20px;
+  z-index: 1; /* Asegura que el formulario esté por encima de la imagen */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+/* Estilo del formulario */
+.card {
+  width: 100%;
+  max-width: 600px; /* El formulario tiene un ancho máximo */
+  background-color: #f9f9f9; /* Fondo claro */
+  border: 1px solid #e6e6e6; /* Borde suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para mayor profundidad */
+  padding: 20px;
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Logo dentro del formulario */
+.logo {
+  display: block;
+  margin: 0 auto 20px; /* Centra el logo con un margen abajo */
+  width: 500px; /* Establece el ancho del logo en 500px */
+  height: auto; /* Mantiene la proporción del logo */
+}
+
+/* Estilo de los botones */
+button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .login-container {
+    grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+    padding: 10px;
+  }
+
+  .background-image {
+    width: 100%; /* La imagen ocupa el 100% del ancho en pantallas pequeñas */
+    height: 50%; /* Ajusta el alto de la imagen */
+  }
+
+  .form-container {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .logo {
+    width: 300px; /* Ajusta el tamaño del logo en móviles */
+  }
+}
+
+/* Media Query para 1920x1080 */
+@media (min-width: 1920px) {
+  .login-container {
+    padding: 50px;
+  }
+
+  .card {
+    padding: 30px;
+  }
+
+  .logo {
+    width: 500px; /* Asegura que el logo tenga 500px en pantallas grandes */
+  }
+}

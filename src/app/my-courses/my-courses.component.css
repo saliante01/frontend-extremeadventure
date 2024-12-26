@@ -1,0 +1,125 @@
+/* pending-registrations.component.css */
+
+/* Asegura que el contenedor ocupe todo el espacio disponible */
+.container-fluid.full-height {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  grid-template-rows: auto 1fr auto; /* Usamos Grid para la distribución */
+}
+
+/* Fila que contiene el encabezado, las tarjetas, y el mensaje */
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid para las tarjetas */
+  gap: 16px; /* Espacio entre las tarjetas */
+  padding: 16px;
+  flex-grow: 1; /* Hace que ocupe todo el espacio disponible */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para las tarjetas */
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.card-body {
+  font-size: 1rem;
+  flex-grow: 1; /* Asegura que el cuerpo de la tarjeta ocupe todo el espacio restante */
+  padding: 1rem;
+  overflow: hidden; /* Previene desbordamientos si el contenido es muy grande */
+}
+
+/* Indicador de carga */
+.spinner-border {
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+}
+
+/* Mensaje si no hay semanas registradas */
+p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Si no hay registros, centra el mensaje */
+.no-registrations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.5rem;
+  color: #888;
+}
+
+/* Media Queries para diferentes resoluciones */
+
+/* Para pantallas grandes (1920x1080) */
+@media (min-width: 1920px) {
+  .container-fluid.full-height {
+    padding: 40px; /* Más espacio en pantallas grandes */
+  }
+
+  .row {
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas para pantallas grandes */
+    gap: 20px;
+  }
+
+  .card {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Mayor sombra en pantallas grandes */
+  }
+
+  .card-header {
+    font-size: 1.2rem; /* Tamaño de fuente más grande */
+  }
+
+  .card-body {
+    font-size: 1.1rem; /* Tamaño de fuente más grande */
+  }
+}
+
+/* Para pantallas medianas (tabletas) */
+@media (max-width: 1200px) {
+  .container-fluid.full-height {
+    padding: 20px;
+  }
+
+  .row {
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas medianas */
+  }
+}
+
+/* Para pantallas pequeñas (celulares) */
+@media (max-width: 767px) {
+  .container-fluid.full-height {
+    padding: 10px; /* Menos espacio en pantallas pequeñas */
+  }
+
+  .row {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+  }
+
+  .card {
+    margin-bottom: 10px; /* Espacio reducido entre las tarjetas */
+  }
+
+  .card-header {
+    font-size: 1rem; /* Tamaño de fuente más pequeño */
+  }
+
+  .card-body {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  }
+
+  p {
+    font-size: 1rem; /* Ajuste de tamaño de texto en pantallas pequeñas */
+  }
+}

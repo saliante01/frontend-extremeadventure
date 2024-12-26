@@ -1,0 +1,56 @@
+/* Estilo general para el contenedor */
+.container {
+    margin-top: 20px;
+  }
+  
+  /* Contenedor para las tarjetas de inscripción en una fila */
+  .registration-card-container {
+    display: flex;
+    flex-wrap: wrap;  /* Permite que las tarjetas se ajusten en nuevas filas si no caben */
+    gap: 20px;  /* Espaciado entre las tarjetas */
+    justify-content: flex-start;  /* Alinea las tarjetas desde el inicio */
+  }
+  
+  /* Estilo para cada tarjeta de inscripción */
+  .registration-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 30%;  /* Controlamos el tamaño de cada tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;  /* Efecto de transformación al pasar el cursor */
+  }
+  
+  .registration-card:hover {
+    transform: translateY(-5px);  /* Efecto de elevación al pasar el cursor */
+  }
+  
+  /* Estilo para el encabezado de cada tarjeta */
+  .registration-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilo para los detalles de cada inscripción */
+  .registration-details p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 5px 0;
+  }
+  
+  .registration-details strong {
+    color: #333;
+  }
+  
+  /* Estilo responsive para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .registration-card {
+      width: 100%;  /* Las tarjetas se apilan en pantallas más pequeñas */
+    }
+  }
+  

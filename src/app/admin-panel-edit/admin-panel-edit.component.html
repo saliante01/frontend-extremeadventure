@@ -1,0 +1,24 @@
+<div *ngIf="objectKeys(groupedActivities).length > 0; else noActivities">
+  <div *ngFor="let date of objectKeys(groupedActivities)">
+    <div class="card mb-3">
+      <div class="card-header">
+        <h5>Actividades del {{ date }}</h5>
+      </div>
+      <div class="card-body">
+        <div *ngFor="let activity of groupedActivities[date]">
+          <h6 class="card-title">{{ activity.activity_title }}</h6>
+          <p class="card-text">{{ activity.description }}</p>
+          <p class="card-text">
+            <small class="text-muted">
+              Horario: {{ activity.start_time }} - {{ activity.end_time }}
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noActivities>
+  <p>No hay actividades programadas.</p>
+</ng-template>

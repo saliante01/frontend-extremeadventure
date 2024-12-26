@@ -1,0 +1,17 @@
+footer {
+  background-color: #4d8abf !important;
+}
+
+footer h5 {
+  font-weight: bold;
+}
+
+footer a {
+  color: white; /* Establece el color inicial del texto de los enlaces */
+  text-decoration: none; /* Remueve la subrayado predeterminado */
+}
+
+footer a:hover {
+  color: #00bcd4; /* Color celeste cuando el cursor pasa por encima */
+  text-decoration: underline; /* Aplica subrayado al pasar el cursor */
+}

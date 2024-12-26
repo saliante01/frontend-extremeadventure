@@ -1,0 +1,113 @@
+/* Aseguramos que el componente ocupe todo el tamaño disponible */
+:host {
+  display: block;
+  height: 100%;
+  overflow-y: auto; /* Para permitir el desplazamiento si el contenido es más grande */
+}
+
+/* Hacemos que las tarjetas (card) ocupen todo el ancho disponible y tengan márgenes consistentes */
+.card {
+  width: 100%;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de hover en las tarjetas para darle un poco de interactividad */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Se asegura de que el contenido de las tarjetas no se desborde */
+.card-body {
+  padding: 15px;
+}
+
+/* Se ajusta el tamaño del título y la descripción */
+.card-header h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-body .card-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.card-body .card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Estilo para los pequeños textos de las actividades (horario) */
+.card-body .text-muted {
+  font-size: 0.875rem;
+}
+
+/* Aseguramos que el mensaje de "No hay actividades programadas" ocupe el espacio disponible también */
+ng-template #noActivities {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin-top: 50px;
+}
+
+/* Si deseas un fondo de color suave para las tarjetas, puedes agregarlo aquí */
+.card-body {
+  background-color: #f9f9f9;
+}
+
+/* Para pantallas de 1920x1080 */
+@media screen and (min-width: 1920px) {
+  .card {
+    width: 45%; /* Ajustamos el ancho de las tarjetas para que se muestren en dos columnas */
+    margin: 15px; /* Añadimos más espacio entre las tarjetas */
+  }
+  
+  .card-header h5 {
+    font-size: 1.5rem; /* Aumentamos el tamaño de fuente para pantallas grandes */
+  }
+
+  .card-body .card-title {
+    font-size: 1.3rem; /* Aumentamos el tamaño del título */
+  }
+
+  .card-body .card-text {
+    font-size: 1.1rem; /* Aumentamos el tamaño del texto */
+  }
+
+  .card-body {
+    padding: 25px; /* Aumentamos el padding para pantallas grandes */
+  }
+}
+
+/* Para pantallas móviles (menor a 768px) */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%; /* Aseguramos que las tarjetas ocupen todo el ancho */
+    margin-bottom: 10px; /* Reducimos el margen entre las tarjetas */
+  }
+  
+  .card-header h5 {
+    font-size: 1rem; /* Reducimos el tamaño del título */
+  }
+
+  .card-body .card-title {
+    font-size: 1rem; /* Reducimos el tamaño del título */
+  }
+
+  .card-body .card-text {
+    font-size: 0.875rem; /* Reducimos el tamaño del texto */
+  }
+
+  .card-body {
+    padding: 10px; /* Reducimos el padding en pantallas móviles */
+  }
+
+  ng-template #noActivities {
+    font-size: 1rem; /* Reducimos el tamaño del texto del mensaje */
+    margin-top: 30px; /* Reducimos el margen superior */
+  }
+}

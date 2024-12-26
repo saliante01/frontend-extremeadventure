@@ -1,0 +1,97 @@
+.register-container {
+  position: relative;
+  display: flex; /* Distribuye la imagen y el formulario horizontalmente */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  width: 100%;
+  margin: 0; /* Elimina márgenes */
+  padding: 0; /* Elimina el padding */
+}
+
+/* Imagen de fondo */
+.background-image {
+  width: 50%; /* Ocupa el 50% del ancho */
+  height: 100%; /* Ocupa el 100% del alto */
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  z-index: -1; /* Coloca la imagen debajo del formulario */
+}
+
+/* Superposición con degradado */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+  z-index: -1;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  width: 50%; /* El formulario ocupa el 50% del ancho */
+  height: 100%; /* El formulario ocupa toda la altura */
+  display: grid; /* Usamos grid en lugar de flex */
+  grid-template-rows: auto 1fr; /* Logo y formulario en filas */
+  justify-items: center; /* Centra el contenido en cada fila */
+  align-items: center; /* Centra verticalmente */
+  padding: 20px;
+  z-index: 1; /* Asegura que el formulario esté por encima de la imagen */
+}
+
+/* Logo dentro del formulario */
+.logo {
+  display: block;
+  margin: 0 auto 20px; /* Centra el logo y agrega margen inferior */
+  width: 500px; /* Establece el tamaño del logo en 500px */
+  height: auto; /* Mantiene la proporción del logo */
+}
+
+/* Estilo del formulario */
+.card {
+  width: 100%;
+  height: 100%; /* El formulario ocupa toda la altura */
+  background-color: #f9f9f9; /* Fondo claro */
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+  padding: 20px;
+  border-radius: 0; /* Elimina los bordes redondeados */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column; /* Coloca la imagen y formulario en columna */
+    padding: 10px;
+  }
+
+  .background-image {
+    width: 100%; /* La imagen ocupa todo el ancho en pantallas pequeñas */
+    height: 50%; /* Ajusta la altura de la imagen */
+  }
+
+  .form-container {
+    width: 100%; /* El formulario ocupa todo el ancho en pantallas pequeñas */
+    padding: 15px;
+    grid-template-rows: auto auto; /* Asegura que logo y formulario estén en filas */
+  }
+
+  .logo {
+    width: 300px; /* Ajusta el tamaño del logo en móviles */
+  }
+}
+
+/* Media Query para 1920x1080 */
+@media (min-width: 1920px) {
+  .register-container {
+    padding: 50px;
+  }
+
+  .card {
+    max-width: 500px;
+    padding: 30px;
+  }
+
+  .logo {
+    width: 500px; /* Asegura que el logo tenga 500px en pantallas grandes */
+  }
+}
