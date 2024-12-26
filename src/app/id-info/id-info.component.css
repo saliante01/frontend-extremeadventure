@@ -1,0 +1,94 @@
+/* Estilo general para el contenedor */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Altura ajustable */
+    padding: 20px;
+  }
+  
+  /* Encabezado */
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Contenedor de las tarjetas */
+  .week-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Estilo de cada tarjeta */
+  .week-card {
+    background-color: white;
+    width: 250px; /* Ajusta el tamaño de las tarjetas */
+    height: 220px; /* Ajusta la altura de las tarjetas */
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Sombra y efecto al pasar el mouse */
+  .week-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Títulos y textos dentro de la tarjeta */
+  .week-card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .week-card-text {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Estilo responsive para móviles */
+  @media (max-width: 768px) {
+    .week-card-container {
+      gap: 10px;
+    }
+  
+    .week-card {
+      width: 100%;
+      height: auto;
+      padding: 15px;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Estilo específico para pantallas 1920x1080 */
+  @media (min-width: 1920px) and (min-height: 1080px) {
+    .week-card-container {
+      gap: 30px;
+    }
+  
+    .week-card {
+      width: 280px;
+      height: 270px;
+      padding: 25px;
+    }
+  
+    .title {
+      font-size: 2.5rem;
+    }
+  }
+  

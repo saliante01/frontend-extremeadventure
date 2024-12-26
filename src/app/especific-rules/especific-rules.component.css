@@ -1,6 +1,6 @@
 .faq-wrapper {
     min-height: 50vh; /* Ocupa al menos la mitad de la ventana */
-    max-height: 50vh; /* Limita la altura máxima */
+    max-height: 70vh; /* Limita la altura máxima */
     background-color: #f3f3f6; /* Gris claro */
     padding: 40px 20px;
     display: flex;

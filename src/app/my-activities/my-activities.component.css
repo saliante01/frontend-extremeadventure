@@ -1,77 +1,105 @@
-/* Estilos para el contenedor principal */
+/* Estilo general para el contenedor */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Estilo para las tarjetas */
+.registration-card-container {
+  display: flex;
+  flex-wrap: wrap;  /* Permite que las tarjetas se ajusten en nuevas filas si no caben */
+  gap: 20px;  /* Espaciado entre las tarjetas */
+  justify-content: space-between;  /* Alinea las tarjetas con espacio entre ellas */
+  width: 100%; /* Hace que el contenedor ocupe el ancho completo */
+  max-width: 1200px; /* Limitamos el ancho del contenedor para pantallas grandes */
+}
+
+/* Estilo para cada tarjeta */
+.registration-card {
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 12px; /* Bordes redondeados */
+  width: 30%;  /* 3 tarjetas por fila, con un 30% de ancho */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease; /* Efecto de transformación al pasar el cursor */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Efecto hover para las tarjetas */
+.registration-card:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+}
+
+/* Estilo para el encabezado de cada tarjeta */
+.registration-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Estilo para los detalles de cada inscripción dentro de las tarjetas */
+.registration-details p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.registration-details strong {
+  color: #333;
+}
+
+/* Estilo responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Las tarjetas se apilan en una sola columna en pantallas más pequeñas */
+  .registration-card {
+    width: 100%;  /* Las tarjetas ocupan el 100% del ancho */
   }
-  
-  /* Título */
-  .title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
+
+  .container {
+    padding: 10px;
   }
-  
-  /* Lista de actividades */
-  .activities-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+
+  .registration-card-container {
+    width: 100%;
   }
-  
-  /* Estilos para las tarjetas de actividad */
-  .activity-card {
-    background-color: #f0f8ff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 150px;
-    transition: transform 0.3s ease;
-  }
-  
-  .activity-card:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Número de la actividad */
-  .activity-number {
+
+  /* Ajustes de los tamaños de texto */
+  .registration-header {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #007bff;
   }
-  
-  /* Nombre de la actividad */
-  .activity-name {
-    font-size: 1.2rem;
-    color: #333;
+
+  .registration-details p {
+    font-size: 14px;
   }
-  
-  /* Ajustes responsivos */
-  @media (max-width: 768px) {
-    .activity-card {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  
-    .title {
-      font-size: 1.5rem;
-    }
+}
+
+/* Estilo específico para pantallas 1920x1080 */
+@media (min-width: 1920px) and (min-height: 1080px) {
+  /* Aumentar el tamaño de las tarjetas y ajustar el espaciado */
+  .registration-card-container {
+    max-width: 1800px; /* Mayor ancho para pantallas grandes */
   }
-  
-  @media (min-width: 1920px) {
-    .container {
-      padding: 40px;
-    }
-  
-    .activity-card {
-      width: 200px;
-      margin: 20px;
-    }
-  
-    .title {
-      font-size: 3rem;
-    }
+
+  .registration-card {
+    width: 30%;  /* 3 tarjetas por fila en pantallas grandes */
+    padding: 30px;
   }
-  
+
+  .registration-header {
+    font-size: 1.8rem;
+  }
+
+  .registration-details p {
+    font-size: 18px;
+  }
+}
