@@ -54,7 +54,7 @@ export class ApplicationFormComponent implements OnInit {
         (response) => {
           console.log('Formulario enviado:', response);
           form.reset();
-          this.router.navigate(['/home']); // Redirigir tras envío exitoso
+          alert("Formulario enviado correctamente");
         },
         (error) => {
           console.error('Error al enviar el formulario:', error);
