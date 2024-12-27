@@ -8,6 +8,18 @@
       <!-- Logo dentro del formulario -->
       <img src="assets/logo2.png" alt="Logo" class="logo" />
       <h2 class="text-center text-primary mb-4">Register</h2>
+      
+      <!-- Mensajes de éxito o error -->
+      <div *ngIf="errorMessage" class="alert alert-danger text-center">
+        {{ errorMessage }}
+      </div>
+      <div *ngIf="successMessage" class="alert alert-success text-center">
+        {{ successMessage }}
+      </div>
+      <div *ngIf="isLoading" class="alert alert-info text-center">
+        Procesando su solicitud...
+      </div>
+
       <form (ngSubmit)="onRegister()">
         <div class="mb-3">
           <label for="firstName" class="form-label">First Name</label>
@@ -29,7 +41,15 @@
           <input type="password" id="password" class="form-control" placeholder="Enter your password" [(ngModel)]="password" name="password" required />
         </div>
 
-        <button type="submit" class="btn btn-primary w-100 mb-2" [disabled]="!isFormValid()">Register</button>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" id="confirmPassword" class="form-control" placeholder="Repeat your password" [(ngModel)]="confirmPassword" name="confirmPassword" required />
+          <div *ngIf="password && confirmPassword && password !== confirmPassword" class="text-danger">
+            Las contraseñas no coinciden.
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mb-2" [disabled]="!isFormValid() || isLoading || password !== confirmPassword">Register</button>
       </form>
 
       <button type="button" class="btn btn-outline-secondary w-100" (click)="goHome()">Volver a Inicio</button>

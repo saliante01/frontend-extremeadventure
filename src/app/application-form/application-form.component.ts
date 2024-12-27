@@ -12,17 +12,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./application-form.component.css'],
 })
 export class ApplicationFormComponent implements OnInit {
+  isLoading = false; // Variable para el estado de carga
   formData = {
     nombre: '',
     rut: '',
     email: '',
     telefono: '',
-    patologica: false,
+    patologica: 'false', // Valor inicial como string
     weeks: [] as number[],
   };
 
-  weekOptions: number[] = [1, 2, 3, 4, 5, 6];
-  errorMessage: string | null = null; // Propiedad para almacenar mensajes de error
+  weekOptions: number[] = [1, 2, 3, 4];
+  errorMessage: string | null = null;
 
   constructor(
     private applicationformserviceService: ApplicationformserviceService,
@@ -39,33 +40,41 @@ export class ApplicationFormComponent implements OnInit {
       this.formData.telefono &&
       this.formData.weeks.length > 0
     ) {
-      this.errorMessage = null; // Limpiar mensaje de error previo
+      this.errorMessage = null;
+      this.isLoading = true; // Inicia el estado de carga
 
       const applicationData = {
-        name: this.formData.nombre,
-        email: this.formData.email,
-        rut: this.formData.rut,
-        phone_number: this.formData.telefono,
-        medical_condition: this.formData.patologica,
-        weeks: this.formData.weeks,
+        registration_name: this.formData.nombre, // Nombre del usuario
+        email: this.formData.email, // Correo electrónico
+        rut: this.formData.rut, // RUT del usuario
+        phone_number: this.formData.telefono, // Número telefónico
+        medical_condition: this.formData.patologica === 'true', // Convierte la cadena a booleano
+        weeks: this.formData.weeks, // Semanas seleccionadas
       };
 
       this.applicationformserviceService.submitApplication(applicationData).subscribe(
         (response) => {
           console.log('Formulario enviado:', response);
+          this.isLoading = false; // Termina el estado de carga
+          alert('Formulario enviado correctamente');
           form.reset();
-          alert("Formulario enviado correctamente");
         },
         (error) => {
           console.error('Error al enviar el formulario:', error);
+          this.isLoading = false; // Termina el estado de carga
 
-          // Manejar diferentes códigos de error
           if (error.status === 400) {
-            this.errorMessage = 'Correo no registrado en la plataforma, por favor regístrese.';
+            this.errorMessage =
+              'Error en la creación de la solicitud. Correo no encontrado en el sistema o Intenta solicitar un curso en el que ya esta inscrito';
+            form.reset();
           } else if (error.status === 500) {
-            this.errorMessage = 'Error con el servidor, por favor inténtelo más tarde.';
+            this.errorMessage =
+              'Error con el servidor, por favor inténtelo más tarde.';
+            form.reset();
           } else {
-            this.errorMessage = 'Ocurrió un error inesperado, por favor inténtelo más tarde.';
+            this.errorMessage =
+              'Ocurrió un error inesperado, por favor inténtelo más tarde.';
+            form.reset();
           }
         }
       );

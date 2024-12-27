@@ -46,7 +46,7 @@ export class CampDetailComponent implements OnInit {
   // Método para obtener las actividades desde la API
   fetchActivities(campId: number): void {
     this.http
-      .get<any[]>(`http://localhost:8000/api/week/${campId}/scheduled_activities/`)
+      .get<any[]>(`https://wild-summer-camp.onrender.com/api/week/${campId}/scheduled_activities/`)
       .subscribe((data) => {
         this.organizeActivitiesByDay(data);  // Organizar las actividades por día
       });

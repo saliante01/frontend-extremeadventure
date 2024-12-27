@@ -7,6 +7,7 @@
         <div class="registration-card" *ngFor="let registration of pendingRegistrations">
           <div class="registration-header">
             <h4>Inscripción ID: {{ registration.id }}</h4>
+            <h5>Nombre Completo: {{ registration.registration_name }}</h5>
           </div>
           <div class="registration-details">
             <p><strong>RUT:</strong> {{ registration.rut }}</p>

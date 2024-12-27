@@ -1,12 +1,17 @@
+/* Contenedor principal */
 .container {
   max-width: 600px;
+  margin: 0 auto; /* Centra el formulario */
+  padding: 15px;  /* Agrega espacio alrededor */
 }
 
+/* Títulos */
 h2 {
   font-size: 24px;
   font-weight: bold;
 }
 
+/* Estilos del formulario */
 form {
   background-color: #f8f9fa;
   padding: 20px;
@@ -14,10 +19,10 @@ form {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Botón deshabilitado */
 button:disabled {
   background-color: #ccc;
 }
-
 
 /* Estilos para los modales */
 .modal {
@@ -81,4 +86,52 @@ button:disabled {
 .modal-footer .btn:hover {
   background-color: #0056b3;
 }
+.text-celeste {
+  color: #4d8abf; /* Celeste claro */
+}
 
+/* Media Queries para soporte en dispositivos móviles */
+@media (max-width: 768px) {
+  /* Ajustes para el contenedor */
+  .container {
+    max-width: 100%; /* Hace el contenedor de ancho completo */
+    padding: 10px;   /* Reduce el espacio alrededor */
+  }
+
+  /* Títulos */
+  h2 {
+    font-size: 20px; /* Ajusta el tamaño del título */
+  }
+
+  /* Asegura que los inputs tengan un buen tamaño en pantallas pequeñas */
+  .form-control {
+    font-size: 14px;  /* Ajusta el tamaño de texto en inputs */
+    padding: 10px;    /* Hace más grande el área de entrada */
+  }
+
+  /* Ajusta el tamaño de los botones */
+  button {
+    width: 100%; /* Hace el botón de ancho completo */
+    padding: 12px; /* Aumenta el padding para mayor facilidad de clic */
+  }
+
+  /* Ajusta las opciones de semanas */
+  .form-check-input {
+    margin-top: 10px; /* Da más espacio entre las opciones */
+  }
+
+  .form-check-label {
+    font-size: 14px; /* Ajusta el tamaño del texto de las opciones */
+  }
+
+  /* Reduce el tamaño de los errores de mensaje */
+  .text-danger {
+    font-size: 14px;
+  }
+
+  /* Spinner de carga */
+  .spinner-border {
+    width: 40px;
+    height: 40px;
+  }
+}

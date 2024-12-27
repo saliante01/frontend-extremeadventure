@@ -1,14 +1,20 @@
-<div class="container mt-5">
-    <h2>Información de las Semanas</h2>
-    <div *ngFor="let week of campWeeks" class="card mb-3">
+<div class="container-fluid mt-5">
+  <h2 class="text-center">INFORMACIÓN DE SEMANAS</h2>
+  <div class="activities-list">
+    <div *ngFor="let week of campWeeks; let i = index" class="card mb-3" [ngStyle]="{'background-image': 'url(' + images[i] + ')'}">
       <div class="card-body">
-        <h5 class="card-title">Semana: {{ week.id }}</h5>
+        <h5 class="card-title">SEMANA {{ week.id }}</h5>
         <p class="card-text">Fecha de inicio: {{ week.start_date }}</p>
         <p class="card-text">Fecha de término: {{ week.end_date }}</p>
         <p class="card-text">Campamento: Campamento de Verano</p>
-        <p class="card-text">Precio: ${{ week.price }}</p>
-        <p class="card-text">Capacidad: {{ week.capacity }} por persona</p>
+        <p class="card-text">Precio: ${{ week.price }} Por Persona</p>
+        <p class="card-text">Capacidad: {{ week.capacity }} Cupos</p>
       </div>
     </div>
   </div>
-  
+
+  <!-- Apartado adicional debajo de las tarjetas -->
+  <div class="info-week">
+    <p class="info-text">La información de la semana no muestra las actividades realizadas en cada una de ellas. Si necesita saber cuál es la información completa de cada semana, por favor diríjase a la sección <strong>Fechas y Precios</strong>.</p>
+  </div>
+</div>

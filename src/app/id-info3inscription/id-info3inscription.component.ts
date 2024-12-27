@@ -11,6 +11,12 @@ import { Idview3Service } from '../idview3.service';
 export class IdInfo3inscriptionComponent implements OnInit {
   campWeeks: any[] = [];  // Variable para almacenar las semanas del campamento
 
+  images = [
+    'assets/ciclismo.jpg', 
+    'assets/cabalgata3.jpg', 
+    'assets/natacion.jpg', 
+    'assets/rafting.png'
+  ];
   constructor(private idView3Service: Idview3Service) { }
 
   ngOnInit(): void {

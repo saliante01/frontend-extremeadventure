@@ -16,12 +16,13 @@ import { DecodeService } from '../decode.service'; // Importar el DecodeService
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  errorMessage: string = ''; 
+  errorMessage: string = '';
+  isLoading: boolean = false; // Variable para el estado de carga
 
   constructor(
     private http: HttpClient,
     private router: Router,
-    private decodeService: DecodeService // Inyectar el servicio DecodeService
+    private decodeService: DecodeService
   ) {}
 
   isFormValid(): boolean {
@@ -34,54 +35,35 @@ export class LoginComponent {
   }
 
   onLogin(): void {
+    this.isLoading = true; // Inicia el estado de carga
     const loginData = {
       email: this.email,
       password: this.password,
     };
-  
-    this.http.post('https://wild-summer-camp.onrender.com/api/users/login', loginData, { withCredentials: true })
+
+    this.http
+      .post('https://wild-summer-camp.onrender.com/api/users/login', loginData, {
+        withCredentials: true,
+      })
       .subscribe({
         next: (response: any) => {
+          this.isLoading = false; // Detiene el estado de carga
+
           if (response?.jwt) {
-            // Almacena el JWT en sessionStorage
             sessionStorage.setItem('authToken', response.jwt);
-            console.log('Login exitoso, token guardado en sessionStorage.');
-  
-            // Establecer cookie con expiración de 10 segundos
-            const expirationDate = new Date(Date.now() + 10 * 60 * 1000); // 10 minutos // 10 segundos
-            document.cookie = `jwt=${response.jwt}; expires=${expirationDate.toUTCString()}; path=/`;
-            console.log('Cookie guardada, expirará en 10 segundos.');
-  
-            // Decodificar el JWT para obtener los datos del usuario
             const decodedToken = this.decodeService.decodeToken(response.jwt);
-            console.log('Token decodificado:', decodedToken); // Imprimir el token completo en consola
-  
-            // Verificar el rol y redirigir según corresponda
+
             if (decodedToken && decodedToken.role === 'admin') {
-              // Redirigir al componente home-admin si el rol es admin
               this.router.navigate(['/home-admin']);
             } else if (decodedToken && decodedToken.role === 'user') {
-              // Redirigir al componente home-user si el rol es user
               this.router.navigate(['/home-user']);
             } else {
-              // En caso de que el rol no sea reconocido, redirigir a la página de inicio
-              console.error('Rol no reconocido:', decodedToken?.role);
               this.router.navigate(['/home']);
             }
-  
-            // Eliminar el token y la cookie después de 10 segundos
-            setTimeout(() => {
-              sessionStorage.removeItem('authToken'); // Elimina el token del sessionStorage
-              document.cookie = 'jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'; // Elimina la cookie
-              console.log('Token y cookie borrados');
-            }, 10 * 60 * 1000); // 10 segundos
-          } else {
-            console.error('Respuesta inesperada del servidor:', response);
           }
         },
         error: (error) => {
-          console.error('Error al intentar iniciar sesión:', error);
-    
+          this.isLoading = false; // Detiene el estado de carga
           if (error.status === 403) {
             this.errorMessage = 'Credenciales inválidas, por favor intente de nuevo.';
           } else if (error.status === 500) {
@@ -101,3 +83,4 @@ export class LoginComponent {
     this.router.navigate(['/home']);
   }
 }
+

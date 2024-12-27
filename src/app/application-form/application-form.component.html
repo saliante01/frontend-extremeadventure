@@ -1,7 +1,16 @@
 <div class="container mt-5">
-  <h2>Formulario de Inscripción</h2>
-  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-    <!-- Campo Nombre -->
+  <!-- Formulario -->
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm" *ngIf="!isLoading">
+    <h2 class="text-center mb-4 text-celeste">Formulario de Inscripción</h2>
+
+    <!-- Indicador de carga -->
+    <div *ngIf="isLoading" class="text-center mb-3">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+      <p>Enviando datos, por favor espere...</p>
+    </div>
+
     <div class="mb-3">
       <label for="nombre" class="form-label">Nombre</label>
       <input
@@ -14,7 +23,6 @@
       />
     </div>
 
-    <!-- Campo Correo Electrónico -->
     <div class="mb-3">
       <label for="email" class="form-label">Correo Electrónico</label>
       <input
@@ -27,7 +35,6 @@
       />
     </div>
 
-    <!-- Campo RUT -->
     <div class="mb-3">
       <label for="rut" class="form-label">RUT</label>
       <input
@@ -37,10 +44,14 @@
         [(ngModel)]="formData.rut"
         name="rut"
         required
+        pattern="^(\d{1,2}\.\d{3}\.\d{3})-(\d{1})$"
+        title="El formato del RUT debe ser XX.XXX.XXX-X"
       />
+      <div *ngIf="form.controls['rut']?.invalid && form.controls['rut']?.touched" class="text-danger">
+        El RUT debe tener el formato: XX.XXX.XXX-X
+      </div>
     </div>
 
-    <!-- Campo Teléfono -->
     <div class="mb-3">
       <label for="telefono" class="form-label">Teléfono</label>
       <input
@@ -50,23 +61,22 @@
         [(ngModel)]="formData.telefono"
         name="telefono"
         required
+        pattern="^\+569\d{8}$"
+        title="El teléfono debe empezar con +569 seguido de 8 dígitos."
       />
+      <div *ngIf="form.controls['telefono']?.invalid && form.controls['telefono']?.touched" class="text-danger">
+        El teléfono debe empezar con +569 seguido de 8 dígitos.
+      </div>
     </div>
 
-    <!-- Campo Condición Patológica -->
     <div class="mb-3">
       <label for="patologica" class="form-label">¿Posee condición patológica?</label>
-      <select
-        class="form-control"
-        [(ngModel)]="formData.patologica"
-        name="patologica"
-      >
+      <select class="form-control" [(ngModel)]="formData.patologica" name="patologica">
         <option value="false">No</option>
         <option value="true">Sí</option>
       </select>
     </div>
 
-    <!-- Campo Semanas -->
     <div class="mb-3">
       <label for="weeks" class="form-label">Semanas a seleccionar</label>
       <div class="form-check" *ngFor="let week of weekOptions">
@@ -82,12 +92,10 @@
       </div>
     </div>
 
-    <!-- Botón de envío -->
     <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
       Enviar
     </button>
 
-    <!-- Mensaje de error -->
     <div *ngIf="errorMessage" class="text-danger mt-3">
       {{ errorMessage }}
     </div>

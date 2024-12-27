@@ -22,64 +22,73 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
   z-index: -1;
 }
 
 /* Contenedor del formulario */
 .form-container {
-  width: 50%; /* El formulario ocupa el 50% del ancho */
-  height: 100%; /* El formulario ocupa toda la altura */
-  display: grid; /* Usamos grid en lugar de flex */
+  width: 50%; /* Mantener el ancho */
+  height: 100%; /* Ocupa toda la altura */
+  display: grid; /* Usamos grid */
   grid-template-rows: auto 1fr; /* Logo y formulario en filas */
-  justify-items: center; /* Centra el contenido en cada fila */
-  align-items: center; /* Centra verticalmente */
+  justify-items: center; /* Centra el contenido horizontalmente */
+  align-items: start; /* Mueve el contenido hacia arriba */
   padding: 20px;
-  z-index: 1; /* Asegura que el formulario esté por encima de la imagen */
+  z-index: 1; /* Asegura que esté sobre la imagen */
+  margin-top: -25px; /* Ajustar la distancia desde arriba */
 }
-
 /* Logo dentro del formulario */
 .logo {
   display: block;
   margin: 0 auto 20px; /* Centra el logo y agrega margen inferior */
-  width: 500px; /* Establece el tamaño del logo en 500px */
+  width: 150px; /* Establece el tamaño del logo en 500px */
   height: auto; /* Mantiene la proporción del logo */
 }
 
 /* Estilo del formulario */
 .card {
-  width: 100%;
-  height: 100%; /* El formulario ocupa toda la altura */
+  width: 95%; /* Aumenta el ancho del contenedor */
+  max-width: 650px; /* Tamaño máximo en pantallas grandes */
+  height: auto; /* Deja que la altura dependa del contenido */
+  min-height: 600px; /* Garantiza un tamaño mínimo */
   background-color: #f9f9f9; /* Fondo claro */
-  border: 1px solid #e6e6e6;
+  border: 1px solid #e6e6e6; /* Borde alrededor */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
-  padding: 20px;
-  border-radius: 0; /* Elimina los bordes redondeados */
+  padding: 40px; /* Más espacio interno */
+  border-radius: 10px; /* Bordes ligeramente redondeados */
+  margin-top: -10px; /* Ajusta su posición */
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
   .register-container {
-    flex-direction: column; /* Coloca la imagen y formulario en columna */
+    flex-direction: column; 
     padding: 10px;
   }
 
   .background-image {
-    width: 100%; /* La imagen ocupa todo el ancho en pantallas pequeñas */
-    height: 50%; /* Ajusta la altura de la imagen */
+    height: 30%; /* Imagen aún más pequeña en móviles */
+    width: 100%;
+    object-fit: contain; /* Ajusta proporcionalmente */
+  }
+  .form-container {
+    width: 100%; 
+    padding: 1px;
+    grid-template-rows: auto auto; 
+    align-items: start;
   }
 
-  .form-container {
-    width: 100%; /* El formulario ocupa todo el ancho en pantallas pequeñas */
-    padding: 15px;
-    grid-template-rows: auto auto; /* Asegura que logo y formulario estén en filas */
+  .card {
+    width: 100%; /* Aumenta el ancho del formulario */
+    max-width: 500px; /* Permite un formulario más grande en móviles */
+    padding: 20px; /* Ajusta el padding en móviles */
+    transform: scale(1); /* Restaura el tamaño completo del formulario */
+    margin-top: -80px; /* Ajusta la posición */
   }
 
   .logo {
-    width: 300px; /* Ajusta el tamaño del logo en móviles */
+    width: 120px; /* Ajusta el tamaño del logo */
   }
 }
-
 /* Media Query para 1920x1080 */
 @media (min-width: 1920px) {
   .register-container {

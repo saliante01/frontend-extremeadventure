@@ -27,6 +27,12 @@
   box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
 }
 
+
+.text-info {
+  font-weight: bold;
+  text-align: center;
+}
+
 /* Estilo del formulario */
 .card {
   width: 100%;
