@@ -5,10 +5,11 @@ import { CampDetailComponent } from '../camp-detail/camp-detail.component';
 import { EspecificRulesComponent } from '../especific-rules/especific-rules.component';
 import { StartProcessComponent } from '../start-process/start-process.component';
 import { FooterComponent } from '../footer/footer.component';
+import { InfoCampamentoComponent } from "../info-campamento/info-campamento.component";
 
 @Component({
   selector: 'app-header-detail-camps',
-  imports:[NavbarComponent,CampDetailComponent,EspecificRulesComponent,StartProcessComponent,FooterComponent],
+  imports: [NavbarComponent, CampDetailComponent, EspecificRulesComponent, StartProcessComponent, FooterComponent, InfoCampamentoComponent],
   templateUrl: './header-detail-camps.component.html',
   styleUrls: ['./header-detail-camps.component.css']
 })
