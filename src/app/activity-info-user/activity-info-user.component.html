@@ -1,4 +1,5 @@
-<div *ngIf="objectKeys(groupedActivities).length > 0; else noActivities">
+<main class="main-content">
+  <div *ngIf="objectKeys(groupedActivities).length > 0; else noActivities">
     <div class="card-container">
       <div *ngFor="let date of objectKeys(groupedActivities)">
         <div class="card mb-3">
@@ -20,8 +21,8 @@
       </div>
     </div>
   </div>
-  
+
   <ng-template #noActivities>
     <p>No hay actividades programadas.</p>
   </ng-template>
-  
+</main>

@@ -1,36 +1,53 @@
+/* Fondo negro mate para todo el contenido */
+.main-content {
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo negro mate */
+  padding: 40px 0;
+}
+
 /* Estilo general para el contenedor */
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ocupa toda la altura de la ventana */
-  padding: 20px; /* Espaciado interno */
+  height: 100%; /* Ocupa toda la altura de la ventana */
+  padding: 20px;
+  color: white; /* Texto blanco */
 }
 
-/* Estilo para las tarjetas */
+/* Estilo para el título */
+.title {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* Estilo para el contenedor de las tarjetas */
 .registration-card-container {
   display: flex;
-  flex-wrap: wrap;  /* Permite que las tarjetas se ajusten en nuevas filas si no caben */
+  flex-direction: column;  /* Alineación vertical de las tarjetas */
+  overflow-y: auto;  /* Permite el desplazamiento vertical */
   gap: 20px;  /* Espaciado entre las tarjetas */
-  justify-content: space-between;  /* Alinea las tarjetas con espacio entre ellas */
+  justify-content: flex-start;  /* Alinea las tarjetas al inicio */
   width: 100%; /* Hace que el contenedor ocupe el ancho completo */
-  max-width: 1200px; /* Limitamos el ancho del contenedor para pantallas grandes */
+  max-height: 80vh; /* Limita la altura de la sección de tarjetas */
+  max-width: 1200px; /* Limitamos el ancho del contenedor */
 }
 
 /* Estilo para cada tarjeta */
 .registration-card {
-  background-color: #ffffff; /* Fondo blanco */
-  border: 1px solid #ddd; /* Borde sutil */
+  background-color: #222; /* Fondo negro mate */
+  border: 2px solid white; /* Borde blanco */
   border-radius: 12px; /* Bordes redondeados */
-  width: 30%;  /* 3 tarjetas por fila, con un 30% de ancho */
+  width: 100%;  /* Las tarjetas ocupan el 100% del ancho */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  padding: 20px;
+  padding: 15px;
   box-sizing: border-box;
   transition: transform 0.3s ease; /* Efecto de transformación al pasar el cursor */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: white; /* Texto blanco */
 }
 
 /* Efecto hover para las tarjetas */
@@ -40,11 +57,12 @@
 
 /* Estilo para el encabezado de cada tarjeta */
 .registration-header {
-  background-color: #007bff;
+  background-color: #00bcd4; /* Celeste en lugar de azul */
   color: white;
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
 /* Estilo para los detalles de cada inscripción dentro de las tarjetas */
@@ -55,27 +73,29 @@
 }
 
 .registration-details strong {
-  color: #333;
+  color: #ddd;
 }
 
 /* Estilo responsive para pantallas pequeñas */
 @media (max-width: 768px) {
-  /* Las tarjetas se apilan en una sola columna en pantallas más pequeñas */
+  /* Las tarjetas ocupan el 100% de la pantalla en pantallas pequeñas */
   .registration-card {
-    width: 100%;  /* Las tarjetas ocupan el 100% del ancho */
+    width: 90%;  /* Las tarjetas ocupan el 90% del ancho */
   }
 
   .container {
     padding: 10px;
   }
 
+  /* Asegurarse de que las tarjetas se ajusten bien y no desborden */
   .registration-card-container {
     width: 100%;
+    max-height: 60vh; /* Limitar altura en pantallas pequeñas */
   }
 
   /* Ajustes de los tamaños de texto */
   .registration-header {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .registration-details p {
@@ -92,11 +112,11 @@
 
   .registration-card {
     width: 30%;  /* 3 tarjetas por fila en pantallas grandes */
-    padding: 30px;
+    padding: 25px;
   }
 
   .registration-header {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .registration-details p {

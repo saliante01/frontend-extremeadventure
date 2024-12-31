@@ -1,39 +1,125 @@
-/* Asegúrate de que el contenedor ocupe el 100% del tamaño disponible */
+/* Fondo negro mate y estructura general */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #121212; /* Fondo negro mate */
+  color: #ffffff; /* Texto blanco */
+  overflow-x: hidden; /* Prevenir desplazamiento horizontal */
+}
+
+/* Contenedor principal que cubre todo el contenido */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh; /* Asegura que el contenido ocupe al menos el alto de la pantalla */
+  background-color: #121212; /* Fondo negro mate */
+  padding-bottom: 20px; /* Añadir espacio abajo para evitar que los elementos toquen el borde */
+  overflow-y: auto; /* Permite desplazamiento vertical si el contenido excede el alto */
+}
+
+/* Contenedor general de la página */
 .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Esto asegura que los elementos se alineen desde la parte superior */
-    align-items: center; /* Esto asegura que los elementos se centren horizontalmente */
+  width: 100%;
+  max-width: 800px; /* Limitamos el ancho del contenido */
+  padding: 20px;
+  box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+}
+
+/* Título de la página */
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4d8abf; /* Azul claro */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Contenedor de formulario */
+.form-container {
+  width: 100%;
+  background-color: #212121; /* Fondo oscuro para el formulario */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+  margin-bottom: 20px; /* Añadir margen inferior para separación */
+}
+
+/* Estilo del input */
+.form-label {
+  color: #d1d1d1; /* Gris claro para la etiqueta */
+}
+
+.form-control {
+  background-color: #333333; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  border: 1px solid #444444; /* Borde suave */
+}
+
+.form-control:focus {
+  border-color: #4d8abf; /* Borde azul claro cuando está enfocado */
+  background-color: #555555; /* Fondo más claro cuando está enfocado */
+}
+
+/* Botón */
+.btn-primary {
+  background-color: #4d8abf; /* Azul claro */
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #3a6e9e; /* Azul oscuro */
+}
+
+/* Estilo de la lista de registros */
+.registrations {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #212121; /* Fondo oscuro de las tarjetas */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.card-body {
+  padding: 15px;
+  color: #d1d1d1; /* Texto en gris claro */
+}
+
+.card-body p {
+  margin-bottom: 10px;
+}
+
+.card-body p strong {
+  color: #4d8abf; /* Azul claro para los títulos */
+}
+
+/* Responsivo para móviles (ancho máximo: 768px) */
+@media (max-width: 768px) {
+  /* Ajustes para el contenedor principal en pantallas pequeñas */
+  .main-content {
+    padding: 10px; /* Menos espacio en los laterales */
+    overflow-y: auto; /* Permite desplazamiento vertical */
   }
-  
-  /* Para el formulario, ocupamos el 100% del ancho disponible */
-  form {
-    width: 100%;
-    max-width: 600px; /* Puedes ajustar este valor para limitar el ancho del formulario */
-    margin: 20px 0;
-  }
-  
-  /* Para los registros, ocupamos el 100% del ancho disponible */
-  div.mt-3 {
-    width: 100%;
-    max-width: 600px; /* Limitar el ancho de la lista de registros */
-  }
-  
-  /* Opcional: Si quieres que los registros ocupen todo el alto disponible dentro del contenedor */
-  .card {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  /* Si quieres que la pantalla de información ocupe todo el espacio disponible, puedes hacer que ocupe al menos el 100% de la altura */
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
+
   .container {
-    min-height: 100vh; /* Asegura que el componente ocupe al menos la altura de la ventana del navegador */
+    padding: 10px; /* Menos espacio en el contenedor */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
   }
-  
+
+  .form-container, .registrations {
+    width: 100%; /* Ancho completo para los elementos */
+    margin-bottom: 20px; /* Margen inferior para separación */
+  }
+
+  .btn-primary {
+    font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño */
+  }
+}

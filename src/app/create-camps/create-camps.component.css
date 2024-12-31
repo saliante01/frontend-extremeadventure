@@ -1,58 +1,66 @@
-/* General container styling */
+/* Estilo general para el contenido principal */
+.main-content {
+  background-color: rgba(0, 0, 0, 0.95); /* Fondo negro mate más oscuro */
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo del contenedor del formulario */
 .container {
   max-width: 700px;
-  margin: 0 auto;
+  width: 100%;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #121212; /* Fondo negro mate más oscuro */
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  height: 70%; /* Hace que el contenedor ocupe todo el espacio disponible */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Heading styling */
+/* Estilo del título */
 h2 {
   text-align: center;
-  color: #343a40;
+  color: #ffffff; /* Título blanco */
   font-size: 24px;
   margin-bottom: 20px;
-  flex-shrink: 0; /* Asegura que el título no se reduzca */
 }
 
-/* Label styling */
+/* Estilo para las etiquetas de los campos */
 .form-label {
   font-size: 16px;
   font-weight: 600;
-  color: #495057;
+  color: #ffffff; /* Color blanco */
   margin-bottom: 10px;
   display: block;
 }
 
-/* Styling for the select input */
+/* Estilo del campo select */
 select.form-control {
   padding: 10px;
   font-size: 16px;
   color: #495057;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff; /* Bordes blancos */
+  background-color: #333333; /* Fondo oscuro */
   width: 100%;
-  box-sizing: border-box;
   height: 40px;
 }
 
 select.form-control:focus {
-  border-color: #007bff;
+  border-color: #00bcd4; /* Bordes celestes en focus */
   outline: none;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
 }
 
-/* Button styling */
+/* Estilo del botón */
 button[type="submit"] {
   width: 100%;
   padding: 12px;
-  background-color: #007bff;
+  background-color: #00bcd4; /* Botón celeste */
   color: white;
   border: none;
   border-radius: 5px;
@@ -62,26 +70,25 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #0097a7; /* Botón celeste oscuro al pasar el ratón */
 }
 
 button[type="submit"]:active {
-  background-color: #003f7f;
+  background-color: #006f76; /* Botón celeste más oscuro al hacer clic */
 }
 
-/* Form field spacing */
+/* Espaciado entre los campos del formulario */
 .mb-3 {
   margin-bottom: 20px;
-  flex-grow: 1; /* Permite que los campos crezcan y ocupen el espacio disponible */
 }
 
-/* Optional: Customizing the form input fields for better visual alignment */
+/* Asegura que los campos de entrada y select tengan la misma altura */
 input.form-control,
 select.form-control {
   height: 40px;
 }
 
-/* Additional: Ensure that the form is vertically spaced out within the container */
+/* Asegura que el formulario ocupe todo el espacio disponible */
 form {
   display: flex;
   flex-direction: column;

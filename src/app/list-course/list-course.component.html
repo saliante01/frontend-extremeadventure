@@ -1,6 +1,7 @@
-<div class="container">
-    <h2>Consultar Registros por Semana</h2>
-    <form (ngSubmit)="onSubmit()">
+<div class="main-content">
+  <div class="container">
+    <h2 class="title">Consultar Registros por Semana</h2>
+    <form (ngSubmit)="onSubmit()" class="form-container">
       <div class="mb-3">
         <label class="form-label">Número de Semana</label>
         <input 
@@ -12,12 +13,12 @@
           placeholder="Ingrese el número de la semana"
         />
       </div>
-  
+
       <button type="submit" class="btn btn-primary">Consultar Registros</button>
     </form>
-  
+
     <!-- Lista de registros desplegables -->
-    <div *ngIf="registrations.length > 0" class="mt-3">
+    <div *ngIf="registrations.length > 0" class="registrations">
       <h3>Registros</h3>
       <div *ngFor="let registration of registrations">
         <div class="card mt-2">
@@ -29,4 +30,4 @@
       </div>
     </div>
   </div>
-  
+</div>

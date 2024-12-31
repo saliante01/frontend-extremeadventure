@@ -1,16 +1,27 @@
-/* Aseguramos que el componente ocupe todo el tamaño disponible */
+/* Establecemos el fondo del contenedor principal y el contenido */
 :host {
   display: block;
   height: 100%;
-  overflow-y: auto; /* Para permitir el desplazamiento si el contenido es más grande */
+  overflow-y: auto; /* Permite desplazamiento si el contenido es más grande */
+  background-color: #121212; /* Fondo negro mate */
+  color: #fff; /* Texto blanco */
+  padding: 20px; /* Espaciado interno */
 }
 
-/* Hacemos que las tarjetas (card) ocupen todo el ancho disponible y tengan márgenes consistentes */
+/* Contenedor de las tarjetas para controlar el diseño */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila */
+  gap: 15px; /* Espacio entre las tarjetas */
+}
+
+/* Hacemos que las tarjetas ocupen todo el ancho disponible y tengan márgenes consistentes */
 .card {
-  width: 100%;
-  margin-bottom: 15px;
+  background-color: #1e1e1e; /* Fondo oscuro para las tarjetas */
+  color: #fff; /* Texto blanco */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  padding: 15px; /* Espaciado interno */
   transition: transform 0.3s ease-in-out;
 }
 
@@ -54,18 +65,16 @@ ng-template #noActivities {
   margin-top: 50px;
 }
 
-/* Si deseas un fondo de color suave para las tarjetas, puedes agregarlo aquí */
-.card-body {
-  background-color: #f9f9f9;
-}
-
 /* Para pantallas de 1920x1080 */
 @media screen and (min-width: 1920px) {
-  .card {
-    width: 45%; /* Ajustamos el ancho de las tarjetas para que se muestren en dos columnas */
-    margin: 15px; /* Añadimos más espacio entre las tarjetas */
+  .card-container {
+    grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila en pantallas grandes */
   }
   
+  .card {
+    max-width: 100%; /* Aseguramos que las tarjetas no excedan el ancho */
+  }
+
   .card-header h5 {
     font-size: 1.5rem; /* Aumentamos el tamaño de fuente para pantallas grandes */
   }
@@ -85,8 +94,12 @@ ng-template #noActivities {
 
 /* Para pantallas móviles (menor a 768px) */
 @media screen and (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr; /* 1 tarjeta por fila en pantallas móviles */
+  }
+
   .card {
-    width: 100%; /* Aseguramos que las tarjetas ocupen todo el ancho */
+    max-width: 100%; /* Las tarjetas ocupan todo el ancho en pantallas móviles */
     margin-bottom: 10px; /* Reducimos el margen entre las tarjetas */
   }
   

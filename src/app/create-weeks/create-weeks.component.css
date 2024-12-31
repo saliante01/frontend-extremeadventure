@@ -1,9 +1,19 @@
+/* Estilo general para el fondo negro mate */
+.main-content {
+  background-color: rgba(0, 0, 0, 0.95); /* Fondo negro mate */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
 /* Estilos generales para el contenedor */
 .container {
   max-width: 800px;
-  margin: 30px auto;
+  width: 100%;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #121212; /* Fondo negro mate */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -13,7 +23,7 @@ h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
-  color: #333;
+  color: #ffffff; /* Título blanco */
 }
 
 /* Formulario */
@@ -26,7 +36,7 @@ form {
 /* Etiquetas de los campos */
 .form-label {
   font-size: 16px;
-  color: #333;
+  color: #ffffff; /* Texto blanco */
 }
 
 /* Estilo de los campos de texto */
@@ -34,10 +44,11 @@ input[type="date"],
 input[type="number"],
 select.form-control {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff; /* Bordes blancos */
   border-radius: 5px;
   font-size: 14px;
-  background-color: #fff;
+  background-color: #333333; /* Fondo negro mate */
+  color: #ffffff; /* Texto blanco */
 }
 
 /* Campo requerido */
@@ -48,7 +59,7 @@ input:invalid {
 /* Botón de envío */
 button[type="submit"] {
   padding: 12px;
-  background-color: #007bff;
+  background-color: #00bcd4; /* Botón celeste */
   color: white;
   border: none;
   border-radius: 5px;
@@ -58,13 +69,17 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #0097a7; /* Botón celeste oscuro al pasar el ratón */
+}
+
+button[type="submit"]:active {
+  background-color: #006f76; /* Botón celeste más oscuro al hacer clic */
 }
 
 /* Estilos de los campos cuando están enfocados */
 input:focus,
 select:focus {
-  border-color: #007bff;
+  border-color: #00bcd4; /* Bordes celestes al enfocar */
   outline: none;
 }
 

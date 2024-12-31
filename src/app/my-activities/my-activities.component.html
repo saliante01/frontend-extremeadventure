@@ -1,16 +1,18 @@
-<div class="container">
-  <h2 class="title">My Activities</h2>
-  <div class="registration-card-container">
-    <div class="registration-card" *ngFor="let activity of activities">
-      <div class="registration-header">
-        <strong>Activity ID: {{ activity.id }}</strong>
-      </div>
-      <div class="registration-details">
-        <div class="activity-name">
-          <strong>{{ activity.title }}</strong>
+<div class="main-content">
+  <div class="container">
+    <h2 class="title">My Activities</h2>
+    <div class="registration-card-container">
+      <div class="registration-card" *ngFor="let activity of activities">
+        <div class="registration-header">
+          <strong>Activity ID: {{ activity.id }}</strong>
         </div>
-        <div class="activity-description">
-          {{ activity.description }}
+        <div class="registration-details">
+          <div class="activity-name">
+            <strong>{{ activity.title }}</strong>
+          </div>
+          <div class="activity-description">
+            {{ activity.description }}
+          </div>
         </div>
       </div>
     </div>

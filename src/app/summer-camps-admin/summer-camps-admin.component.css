@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: #121212; /* Negro mate */
   overflow-y: auto;
 }
 
@@ -19,7 +19,7 @@
 .page-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #007bff;
+  color: #4d8abf; /* Azul claro */
   margin-bottom: 20px;
   text-align: center;
 }
@@ -27,9 +27,9 @@
 /* Contenedor de tarjetas */
 .camps-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid flexible */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Diseño flexible */
   gap: 20px;
-  justify-content: center; /* Centra las tarjetas horizontalmente */
+  justify-content: center;
 }
 
 /* Tarjetas */
@@ -37,11 +37,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
-  max-width: 350px;
+  background-color: #212121; /* Negro mate */
+  color: #ffffff; /* Texto blanco */
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra coherente */
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease;
@@ -55,23 +54,25 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #4d8abf; /* Azul claro */
 }
 
 .card-body p {
   margin: 5px 0;
   font-size: 0.9rem;
-  color: #495057;
+  color: #d1d1d1; /* Gris claro */
 }
 
+/* Botón primario */
 .btn-primary {
-  background-color: #007bff;
+  background-color: #4d8abf; /* Azul claro */
   border: none;
   border-radius: 5px;
   font-size: 1rem;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #3a6e9e; /* Azul oscuro */
 }
 
 /* Pantallas grandes (1920x1080) */

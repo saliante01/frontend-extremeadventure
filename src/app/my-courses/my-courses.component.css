@@ -1,16 +1,26 @@
-/* Asegura que el contenedor ocupe todo el espacio disponible */
+/* Estilo global para el contenedor principal */
 .container-fluid.full-height {
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 20px;
+  background-color: #121212; /* Fondo negro mate */
 }
 
-/* Fila que contiene el encabezado, las tarjetas, y el mensaje */
+/* Estilo para el contenido principal */
+.main-content {
+  flex-grow: 1;
+  background-color: #121212; /* Fondo negro mate */
+  color: #ffffff; /* Texto blanco */
+  padding: 20px;
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Fila que contiene las tarjetas */
 .row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Aumenta el ancho mínimo para las tarjetas */
-  gap: 16px; /* Espacio entre las tarjetas */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
   padding: 16px;
   flex-grow: 1;
 }
@@ -19,37 +29,72 @@
 .card {
   display: flex;
   flex-direction: column;
-  height: 380px; /* Aumenta la altura de las tarjetas (ahora 380px) */
-  width: 260px; /* Aumenta el ancho de las tarjetas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para las tarjetas */
+  height: 300px; /* Altura más pequeña */
+  width: 240px; /* Ancho más pequeño */
+  background-color: #212121; /* Negro mate */
+  color: #ffffff; /* Texto blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
   border-radius: 10px; /* Bordes redondeados */
   margin-bottom: 16px;
   overflow: hidden; /* Previene el desbordamiento de contenido */
+  padding: 10px; /* Espaciado interno */
+  transition: transform 0.2s ease-in-out; /* Animación al pasar el cursor */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Sutil elevación al pasar el cursor */
 }
 
 /* Cabecera de la tarjeta */
 .card-header {
-  background-color: #f8f9fa;
+  background-color: #333333; /* Un gris oscuro para contraste */
   font-weight: bold;
-  padding: 0.5rem; /* Reduce el padding para hacer más compacta la tarjeta */
-  font-size: 0.9rem;
+  padding: 0.5rem;
+  font-size: 1rem;
   text-align: center;
+  border-bottom: 1px solid #444444; /* Línea sutil para separación */
 }
 
 /* Cuerpo de la tarjeta */
 .card-body {
-  font-size: 0.8rem; /* Tamaño de fuente reducido */
-  padding: 0.5rem;
+  font-size: 0.9rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  padding: 0.5rem;
+}
+
+/* Texto dentro de la tarjeta */
+.card p {
+  color: #ffffff; /* Texto blanco */
+  margin: 5px 0;
+  font-size: 0.85rem;
 }
 
 /* Botón */
 .btn {
-  margin-top: 5px;
-  font-size: 0.8rem;
+  margin-top: auto; /* Posiciona automáticamente en el espacio disponible */
+  margin-bottom: 10px; /* Añade espacio en la parte inferior */
+  font-size: 0.85rem;
+  background-color: #4d8abf; /* Verde brillante */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #4d8abf; /* Verde más oscuro al pasar el cursor */
+}
+
+.card .btn {
+  align-self: center; /* Centra el botón horizontalmente */
+  width: 80%; /* Ocupa el 80% del ancho de la tarjeta */
+  text-align: center;
+  position: relative; /* Permite usar top */
+  top: -5px; /* Eleva el botón */
 }
 
 /* Indicador de carga */
@@ -62,7 +107,7 @@
 /* Mensaje si no hay semanas registradas */
 p {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /* Media Queries para diferentes resoluciones */
@@ -70,60 +115,72 @@ p {
 /* Para pantallas grandes (1920x1080) */
 @media (min-width: 1920px) {
   .container-fluid.full-height {
-    padding: 40px; /* Más espacio en pantallas grandes */
+    padding: 40px;
   }
 
   .row {
-    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas para pantallas grandes */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
 
   .card {
-    width: 300px; /* Ajuste del ancho de la tarjeta */
-    height: 450px; /* Aumento en altura para mayor visibilidad */
+    width: 280px;
+    height: 320px;
   }
 
   .card-header {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .card-body {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 
 /* Para pantallas medianas (tabletas) */
 @media (max-width: 1200px) {
   .row {
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas medianas */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* Para pantallas pequeñas (celulares) */
 @media (max-width: 767px) {
   .container-fluid.full-height {
-    padding: 10px; /* Menos espacio en pantallas pequeñas */
+    padding: 10px;
+    width: 100%; /* Asegura que no se desborde */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    overflow-x: hidden; /* Previene el desbordamiento horizontal */
   }
 
   .row {
-    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    grid-template-columns: 1fr; /* Una tarjeta por fila */
+    gap: 10px; /* Reduce el espacio entre tarjetas */
+    margin: 0; /* Elimina márgenes adicionales */
   }
 
   .card {
-    width: 240px; /* Ajuste del ancho para pantallas pequeñas */
-    height: 360px; /* Aumento de la altura para pantallas pequeñas */
-    margin-bottom: 10px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 300px; /* Máximo ancho para evitar desbordes */
+    margin: 0 auto; /* Centra las tarjetas */
+    height: auto; /* Ajusta la altura según el contenido */
   }
 
   .card-header {
-    font-size: 0.8rem;
+    font-size: 1rem; /* Ajusta el tamaño del texto */
   }
 
   .card-body {
-    font-size: 0.75rem;
+    font-size: 0.9rem; /* Tamaño de texto adecuado */
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    width: 90%; /* Botón adaptado al ancho de la tarjeta */
   }
 
   p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    word-wrap: break-word; /* Permite dividir palabras largas */
   }
 }

@@ -55,7 +55,8 @@ export class FormsScheduleComponent {
     // Enviamos la solicitud POST
     this.scheduleFormService.submitForm(url, formData).subscribe(
       (response) => {
-        console.log('Schedule created:', response);
+        alert("Actividad agendada correctamente");
+        
       },
       (error) => {
         console.error('Error creating schedule:', error);

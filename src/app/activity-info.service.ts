@@ -9,7 +9,7 @@ export class ActivityInfoService {
   constructor(private http: HttpClient) {}
 
   getScheduledActivities(weekId: number): Observable<any[]> {
-    const url = `http://localhost:8000/api/week/${weekId}/scheduled_activities/`;
+    const url = `https://wild-summer-camp.onrender.com/api/week/${weekId}/scheduled_activities/`;
     return this.http.get<any[]>(url);
   }
 }

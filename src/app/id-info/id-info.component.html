@@ -1,11 +1,13 @@
-<div class="container mt-5">
-  <h2 class="title">Información de las Semanas</h2>
-  <div class="week-card-container">
-    <div *ngFor="let week of campWeeks" class="week-card">
-      <div class="week-card-body">
-        <h5 class="week-card-title">Semana Id: {{ week.id }}</h5>
-        <p class="week-card-text">Fecha de inicio: {{ week.start_date }}</p>
-        <p class="week-card-text">Fecha de término: {{ week.end_date }}</p>
+<div class="main-content">
+  <div class="container mt-5">
+    <h2 class="title">Información de las Semanas</h2>
+    <div class="week-card-container">
+      <div *ngFor="let week of campWeeks" class="week-card">
+        <div class="week-card-body">
+          <h5 class="week-card-title">Semana Id: {{ week.id }}</h5>
+          <p class="week-card-text">Fecha de inicio: {{ week.start_date }}</p>
+          <p class="week-card-text">Fecha de término: {{ week.end_date }}</p>
+        </div>
       </div>
     </div>
   </div>
