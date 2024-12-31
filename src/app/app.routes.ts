@@ -30,6 +30,7 @@ import { HeaderAdduserComponent } from './header-adduser/header-adduser.componen
 import { AuthGuard } from './auth.guard';
 import { HeaderListComponent } from './header-list/header-list.component';
 import { HeaderActivityinfoComponent } from './header-activityinfo/header-activityinfo.component';
+import { MobileInfoComponent } from './mobile-info/mobile-info.component';
 export const routes: Routes = [
   { path: 'home', component: HomeComponent }, // Ruta principal
   { path: 'date-price', component: DatePriceComponent}, // Ruta para el navbar
@@ -44,6 +45,7 @@ export const routes: Routes = [
   { path: 'rules', component:HeaderRulesComponent},
  // { path: 'header-myinfo', component: HeaderUserInformationComponent, canActivate: [AuthGuard], data: { role: 'user' } }, // Ruta para el navbar
   { path: 'header-mycourses', component: HeaderCoursesUserComponent, canActivate: [AuthGuard], data: { role: 'user' } }, // Ruta para el navbar
+  { path: 'header-infoweb', component: MobileInfoComponent, canActivate: [AuthGuard], data: { role: 'user' } }, // Ruta para el navbar
   { path: 'register-form', component: RegisterFormComponent}, // Ruta para el navbar
   { path: 'contact', component: ContactComponent}, // Ruta para el navbar
   { path: 'login', component: LoginComponent }, // Ruta para el navbar
