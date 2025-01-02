@@ -3,28 +3,27 @@
   <div class="carousel">
     <div class="carousel-track" [style.transform]="carouselTransform">
       <div *ngFor="let day of daysOfWeek; let i = index" class="day-card">
-        <div
-          class="circle"
-          [ngStyle]="{ 'background-color': getCircleColor(i) }"
-        ></div>
-        <h2 class="day-title">{{ day }}</h2>
+        <div class="circle" [ngStyle]="{ 'background-color': getCircleColor(i) }"></div>
+        <h2 class="day-title">{{ day }} - {{ dates[day] }}</h2> <!-- Mostrar día y fecha -->
 
         <!-- Mostrar actividades con horarios -->
         <div class="activity" *ngFor="let activity of activities[day]">
-          <h3>{{ activity.title }}</h3> <!-- Título de la actividad -->
           <p>
-            {{ activity.time }} | {{ activity.location }}
+            <span class="activity-time">{{ getFormattedTimeRange(activity.time) }}</span> | 
+            <span class="activity-title">{{ activity.title }}</span> | 
+            <span class="activity-location">{{ activity.location }}</span>
           </p>
 
           <!-- Mostrar requisitos si existen -->
-          <div *ngIf="activity.requirements">
-            <h4>Nota:</h4>
+          <div class="activity-requirements" *ngIf="activity.requirements">
+            <p>Requerimientos</p>
             <ul>
               <li *ngFor="let requirement of activity.requirements.split(',')">
                 {{ requirement }}
               </li>
             </ul>
           </div>
+          
           <hr />
         </div>
       </div>

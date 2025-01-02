@@ -23,7 +23,7 @@
 /* Estilo básico de las tarjetas */
 .day-card {
   position: relative;
-  background-color: #f3f4f6;
+  background-color: #4d8abf;
   padding: 2rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   height: 600px;
@@ -38,6 +38,9 @@
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 0;
   margin-top: 100px;
+  display: flex;
+  flex-direction: column; /* Organizar contenido verticalmente */
+  justify-content: space-between; /* Asegura que los elementos estén distribuidos de manera equitativa */
 }
 
 .day-card::before {
@@ -57,12 +60,40 @@
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #0c347e;
+  color: #ffffff;
 }
 
 .activity {
   margin-bottom: 1rem;
-  color: #0c347e;
+  color: #ffffff;
+  font-size: 0.9rem;
+  flex-grow: 1; /* Esto hace que el contenido de actividades crezca para empujar hacia abajo */
+}
+
+.activity p {
+  font-size: 0.9rem;
+  color: #ffffff;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.activity-time,
+.activity-title,
+.activity-location {
+  margin-right: 10px; /* Espacio entre los elementos */
+}
+
+.activity-time {
+  font-weight: normal;
+}
+
+.activity-title {
+  font-weight: bold;
+}
+
+.activity-location {
+  font-style: italic;
 }
 
 .carousel-button {
@@ -88,44 +119,17 @@
   right: 30px;
 }
 
-.requirements {
-  margin-top: 1rem;
-  padding: 1rem 0;
+.activity-requirements {
+  margin-top: 100%; /* Esto empuja los requisitos al fondo */
+  font-size: 13px;
+  text-align: left;
 }
 
-.requirements h3 {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #0c347e;
-  margin-bottom: 0.5rem;
+.activity-requirements h4 {
+  margin-top: 2rem; /* Ajusta el espacio entre el texto de la actividad y los requisitos */
+  
 }
 
-.requirements ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.requirements li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.requirements li strong {
-  font-weight: bold;
-  color: #0c347e;
-}
-
-.requirements li::before {
-  content: '✔';
-  color: #4caf50;
-  margin-right: 8px;
-  font-size: 1.2rem;
-}
-
-.requirements li:last-child {
-  margin-bottom: 0;
-}
 
 @media (max-width: 768px) {
   .carousel-track {
@@ -143,6 +147,3 @@
     margin-right: 1rem; /* Ajustar el margen entre las tarjetas */
   }
 }
-
-
-

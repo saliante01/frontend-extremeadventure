@@ -1,7 +1,7 @@
 .faq-wrapper {
-    min-height: 50vh; /* Ocupa al menos la mitad de la ventana */
-    max-height: 70vh; /* Limita la altura máxima */
-    background-color: #f3f3f6; /* Gris claro */
+    min-height: 120vh; /* Ocupa al menos la mitad de la ventana */
+    max-height: 120vh; /* Limita la altura máxima */
+    background-color: #ffffff; /* Gris claro */
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
   }
   
   .title {
-    font-size: clamp(2rem, 5vw, 4rem); /* Tamaño dinámico */
+    font-size: clamp(2rem, 3vw, 4rem); /* Tamaño dinámico */
     font-weight: bold;
     color: #0c347e; /* Azul */
     margin-bottom: 30px;

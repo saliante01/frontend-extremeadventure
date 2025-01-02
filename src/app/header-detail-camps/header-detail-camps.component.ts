@@ -6,10 +6,12 @@ import { EspecificRulesComponent } from '../especific-rules/especific-rules.comp
 import { StartProcessComponent } from '../start-process/start-process.component';
 import { FooterComponent } from '../footer/footer.component';
 import { InfoCampamentoComponent } from "../info-campamento/info-campamento.component";
+import { CartInfocampComponent } from "../cart-infocamp/cart-infocamp.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header-detail-camps',
-  imports: [NavbarComponent, CampDetailComponent, EspecificRulesComponent, StartProcessComponent, FooterComponent, InfoCampamentoComponent],
+  imports: [NavbarComponent, CampDetailComponent, StartProcessComponent, FooterComponent,CartInfocampComponent,CommonModule],
   templateUrl: './header-detail-camps.component.html',
   styleUrls: ['./header-detail-camps.component.css']
 })

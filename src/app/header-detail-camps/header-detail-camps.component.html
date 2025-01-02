@@ -18,11 +18,12 @@
             <i class="bi bi-geo-alt-fill location-icon"></i> <!-- Ícono de ubicación -->
         </p>
     </div>
-  
 </div>
 
 <app-camp-detail></app-camp-detail>
-<app-info-campamento></app-info-campamento>
-<app-especific-rules></app-especific-rules>
+
+<!-- Mostrar cart-infocamp solo si campId es igual a 4 -->
+<app-cart-infocamp *ngIf="campId == 4"></app-cart-infocamp>
+
 <app-start-process></app-start-process>
 <app-footer></app-footer>

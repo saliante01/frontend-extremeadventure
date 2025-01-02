@@ -1,0 +1,126 @@
+/* Estilo general para el fondo negro mate */
+.main-content {
+    background-color: #121212; /* Fondo negro mate */
+    color: #ffffff; /* Texto blanco */
+    min-height: 100vh; /* Altura mínima para llenar la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar el contenido verticalmente */
+    align-items: center; /* Centrar el contenido horizontalmente */
+    padding: 20px; /* Espaciado interno */
+  }
+  
+  /* Estilo general para el contenedor */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Ancho máximo del formulario */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 30px; /* Espaciado interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    background-color: #212121; /* Fondo oscuro para el contenedor */
+  }
+  
+  /* Encabezado */
+  .container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff; /* Color blanco para el encabezado */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Estilo del formulario */
+  form {
+    width: 100%;
+  }
+  
+  /* Estilo de los labels */
+  form .form-label {
+    font-size: 1rem;
+    color: #bbb; /* Color gris para el texto de los labels */
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  /* Estilo de los inputs */
+  form .form-control {
+    height: 45px; /* Altura fija para consistencia */
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  form .form-control:focus {
+    border-color: #4d8abf; /* Cambiar a color celeste al enfocar */
+    outline: none;
+    box-shadow: 0 0 5px rgba(77, 138, 191, 0.2);
+  }
+  
+  /* Botón de envío */
+  form .btn {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #4d8abf; /* Color celeste */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  form .btn:hover {
+    background-color: #3a6fa5; /* Tonalidad más oscura al pasar el cursor */
+  }
+  
+  /* Estilo responsive para móviles */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+      box-shadow: none; /* Eliminar sombra en pantallas pequeñas */
+      border: none; /* Sin borde para diseño más simple */
+    }
+  
+    .container h2 {
+      font-size: 1.5rem;
+    }
+  
+    form .btn {
+      font-size: 1rem;
+      padding: 8px 15px;
+    }
+  }
+  
+  /* Estilo específico para pantallas 1920x1080 */
+  @media (min-width: 1920px) and (min-height: 1080px) {
+    .container h2 {
+      font-size: 2.5rem;
+    }
+  
+    form {
+      max-width: 600px;
+      padding: 40px;
+    }
+  
+    form .form-label {
+      font-size: 1.2rem;
+    }
+  
+    form .form-control {
+      height: 50px;
+      font-size: 1.1rem;
+    }
+  
+    form .btn {
+      font-size: 1.4rem;
+      padding: 12px 25px;
+    }
+  }
+  

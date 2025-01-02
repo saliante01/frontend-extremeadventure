@@ -11,7 +11,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./camp-detail.component.css'],
 })
 export class CampDetailComponent implements OnInit {
-  // Variables para almacenar los días de la semana y las actividades
   daysOfWeek: string[] = [
     'Lunes',
     'Martes',
@@ -21,6 +20,9 @@ export class CampDetailComponent implements OnInit {
     'Sábado',
     'Domingo',
   ];
+
+  // Nuevo objeto para mapear días con fechas
+  dates: Record<string, string> = {};
 
   activities: Record<string, { title: string, time: string, location: string, requirements: string | null, activityId: number }[]> = {};
 
@@ -39,20 +41,34 @@ export class CampDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
-    const campId = +this.route.snapshot.paramMap.get('id')!;  // Obtener el ID desde la URL
-    this.fetchActivities(campId);  // Realizar la consulta con el ID obtenido
+    const campId = +this.route.snapshot.paramMap.get('id')!;
+    this.fetchActivities(campId);
+    this.setDates(campId);  // Establecer las fechas según el campId
   }
 
-  // Método para obtener las actividades desde la API
+  // Asignar las fechas según el campId
+  setDates(campId: number): void {
+    const baseDates: Record<number, string[]> = {
+      1: ['6', '7', '8', '9', '10', '11', '12'],
+      2: ['13', '14', '15', '16', '17', '18', '19'],
+      4: ['20', '21', '22', '23', '24', '25', '26'],
+    };
+    
+    const dates = baseDates[campId] || [];
+    
+    this.daysOfWeek.forEach((day, index) => {
+      this.dates[day] = dates[index] || '';
+    });
+  }
+
   fetchActivities(campId: number): void {
     this.http
       .get<any[]>(`https://wild-summer-camp.onrender.com/api/week/${campId}/scheduled_activities/`)
       .subscribe((data) => {
-        this.organizeActivitiesByDay(data);  // Organizar las actividades por día
+        this.organizeActivitiesByDay(data);
       });
   }
 
-  // Organizar las actividades por días de la semana
   organizeActivitiesByDay(activities: any[]): void {
     const activitiesByDay: Record<string, { title: string, time: string, location: string, requirements: string | null, activityId: number }[]> = {
       'Lunes': [],
@@ -66,42 +82,45 @@ export class CampDetailComponent implements OnInit {
 
     activities.forEach((activity) => {
       const date = new Date(activity.date);
-      const dayOfWeek = this.daysOfWeek[date.getDay()];  // Obtener el día de la semana
+      const dayOfWeek = this.daysOfWeek[date.getDay()];
       activitiesByDay[dayOfWeek].push({
-        title: activity.activity_title,  // Título de la actividad
-        time: `${activity.start_time} - ${activity.end_time}`,  // Horario de la actividad
-        location: activity.location,  // Ubicación de la actividad
-        requirements: activity.requirements,  // Requisitos de la actividad (si existen)
-        activityId: activity.id,  // ID de la actividad
+        title: activity.activity_title,
+        time: `${activity.start_time} - ${activity.end_time}`,
+        location: activity.location,
+        requirements: activity.requirements,
+        activityId: activity.id,
       });
     });
 
-    this.activities = activitiesByDay;  // Asignar las actividades organizadas
+    this.activities = activitiesByDay;
   }
 
-  // Obtener la transformación CSS para el carrusel
   get carouselTransform(): string {
-    const isMobile = window.innerWidth <= 768;  // Detectar si es dispositivo móvil
-    const distancePerClick = isMobile ? 350 : 400;  // Definir distancia del carrusel
-    return `translateX(-${this.currentIndex * distancePerClick}px)`;  // Aplicar transformación
+    const isMobile = window.innerWidth <= 768;
+    const distancePerClick = isMobile ? 350 : 400;
+    return `translateX(-${this.currentIndex * distancePerClick}px)`;
   }
 
-  // Mover el carrusel a la siguiente tarjeta
   next(): void {
     if (this.currentIndex < this.daysOfWeek.length - 1) {
       this.currentIndex++;
     }
   }
 
-  // Mover el carrusel a la tarjeta anterior
   prev(): void {
     if (this.currentIndex > 0) {
       this.currentIndex--;
     }
   }
 
-  // Obtener el color del círculo basado en el índice del día
   getCircleColor(index: number): string {
     return this.colors[index % this.colors.length];
+  }
+
+  getFormattedTimeRange(timeRange: string): string {
+    const times = timeRange.split('-');
+    const startTime = times[0].slice(0, 5);
+    const endTime = times[1].slice(0, 6);
+    return `${startTime} - ${endTime}`;
   }
 }
