@@ -1,0 +1,97 @@
+.main-content {
+    background-color: #4d8abf; /* Fondo celeste */
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  /* Cambiar la dirección para colocar el título encima */
+    min-height: 100vh;
+}
+
+.title-container {
+    width: 100%;
+    display: flex;
+    align-items: center; /* Alinea la imagen y el texto verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    margin-bottom: 40px; /* Espacio entre el título y las tarjetas */
+}
+
+.main-title-text {
+    font-size: 50px; /* Tamaño del texto */
+    font-weight: bold; /* Título principal en negrita */
+    color: #ffffff; /* Color blanco */
+    margin: 0; /* Elimina márgenes predeterminados */
+    margin-right: 20px; /* Espacio entre el texto y la imagen */
+}
+
+.camp-image {
+    width: 150px; /* Tamaño de la imagen (ajústalo según sea necesario) */
+    height: auto;
+}
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    margin-top: 10%;
+    background-color: rgba(255, 255, 255, .15); /* Gris transparente */
+    padding: 30px; /* Puedes ajustar el padding si lo necesitas */
+    width: 370px; /* Mantiene el ancho */
+    height: 300px; /* Aumenta la altura de las tarjetas */
+    transition: transform 0.3s ease;
+  
+    /* Bordes redondeados específicos para cada esquina */
+    border-top-left-radius: 0;   /* Esquina superior izquierda */
+    border-top-right-radius: 50px;   /* Esquina superior derecha (sin redondear) */
+    border-bottom-right-radius: 0; /* Esquina inferior derecha */
+    border-bottom-left-radius: 50px;  /* Esquina inferior izquierda (sin redondear) */
+  
+    /* Elimina el centrado del contenido */
+    text-align: left;
+    color: #ffffff;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* Efecto al pasar el mouse */
+  }
+  
+  .card h3 {
+    color: #ffffff;
+    margin-bottom: 20px; /* Separa el título de la información */
+    text-align: center; /* Centra solo el título */
+    font-size: 24px; /* Cambia el tamaño de la fuente aquí */
+    font-weight: bold; /* Títulos de las tarjetas en negrita */
+}
+  
+  .card h4 {
+    color: #2980b9;
+  }
+  
+  .card ul {
+    list-style-type: none;
+    padding-left: 20px; /* Añadido para que la lista se alinee con el contenido */
+  }
+  
+  .card ul li {
+    margin-bottom: 10px; /* Añadir espacio entre cada ítem de la lista */
+    font-size: 13px;
+  }
+  
+  .card button.btn-enroll {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .card button.btn-enroll:hover {
+    background-color: #2980b9;
+  }
+  

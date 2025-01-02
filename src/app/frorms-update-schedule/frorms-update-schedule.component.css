@@ -1,0 +1,95 @@
+/* Fondo negro mate para el contenido principal */
+.main-content {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro mate */
+    padding: 40px 0;
+    color: white; /* Texto blanco */
+  }
+  
+  /* Estilo general para el contenedor */
+  .container {
+    max-width: 800px; /* Limita el ancho del formulario */
+    margin: 0 auto; /* Centra el formulario */
+    padding: 20px;
+    background-color: #222; /* Fondo negro mate */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  }
+  
+  /* Encabezado */
+  h2 {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos para los inputs y el formulario */
+  .form-control {
+    background-color: #333; /* Fondo negro mate para los inputs */
+    border: 1px solid #444; /* Borde gris oscuro */
+    color: white; /* Texto blanco */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .form-control:focus {
+    border-color: #00bcd4; /* Azul celeste en foco */
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5); /* Sombra azul celeste */
+  }
+  
+  /* Estilo para el botón de submit */
+  .btn-submit {
+    background-color: #00bcd4; /* Celeste */
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-submit:hover {
+    background-color: #0097a7; /* Color más oscuro al pasar el ratón */
+  }
+  
+  /* Estilo responsive para móviles */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+      max-width: 95%; /* Ancho del formulario en pantallas más pequeñas */
+    }
+  
+    h2 {
+      font-size: 1.5rem; /* Reducción del tamaño del título */
+    }
+  
+    .form-control {
+      padding: 8px;
+    }
+  
+    .btn-submit {
+      padding: 10px 20px;
+    }
+  }
+  
+  /* Estilo para pantallas 1920x1080 */
+  @media (min-width: 1920px) {
+    .container {
+      max-width: 600px; /* Aumentar el tamaño del formulario en pantallas grandes */
+    }
+  
+    h2 {
+      font-size: 2.5rem; /* Aumentar el tamaño del título */
+    }
+  
+    .form-control {
+      font-size: 1.1rem; /* Aumentar el tamaño de los inputs */
+    }
+  
+    .btn-submit {
+      font-size: 1.2rem; /* Aumentar el tamaño del botón */
+    }
+  }
+  

@@ -4,11 +4,13 @@ import { AdminPanelEditComponent } from '../admin-panel-edit/admin-panel-edit.co
 import { NavbarAdminComponent } from "../navbar-admin/navbar-admin.component";
 import { FooterComponent } from "../footer/footer.component";
 import { FormEditWeekComponent } from "../form-edit-week/form-edit-week.component";
+import { FrormsUpdateScheduleComponent } from "../frorms-update-schedule/frorms-update-schedule.component";
+
 
 @Component({
   selector: 'app-header-edit-camp',
   standalone: true,
-  imports: [AdminPanelEditComponent, NavbarAdminComponent, FooterComponent, FormEditWeekComponent],
+  imports: [AdminPanelEditComponent, NavbarAdminComponent, FooterComponent, FrormsUpdateScheduleComponent],
   templateUrl: './header-edit-camp.component.html',
   styleUrls: ['./header-edit-camp.component.css']
 })

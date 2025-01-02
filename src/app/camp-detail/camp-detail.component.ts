@@ -3,10 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-camp-detail',
-  standalone:true,
-  imports:[FormsModule,CommonModule],
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   templateUrl: './camp-detail.component.html',
   styleUrls: ['./camp-detail.component.css'],
 })
@@ -36,14 +37,14 @@ export class CampDetailComponent implements OnInit {
     '#ffa07a', // Naranja claro
   ];
 
-  currentIndex: number = 0;  // Índice para el desplazamiento del carrusel
+  currentIndex: number = 0; // Índice para el desplazamiento del carrusel
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
     const campId = +this.route.snapshot.paramMap.get('id')!;
     this.fetchActivities(campId);
-    this.setDates(campId);  // Establecer las fechas según el campId
+    this.setDates(campId); // Establecer las fechas según el campId
   }
 
   // Asignar las fechas según el campId
@@ -54,9 +55,9 @@ export class CampDetailComponent implements OnInit {
       3: ['20', '21', '22', '23', '24', '25', '26'],
       4: ['20', '21', '22', '23', '24', '25', '26'],
     };
-    
+
     const dates = baseDates[campId] || [];
-    
+
     this.daysOfWeek.forEach((day, index) => {
       this.dates[day] = dates[index] || '';
     });
@@ -93,7 +94,22 @@ export class CampDetailComponent implements OnInit {
       });
     });
 
+    // Ordenar las actividades por hora de inicio dentro de cada día
+    for (const day in activitiesByDay) {
+      activitiesByDay[day].sort((a, b) => {
+        const timeA = this.convertTimeToMinutes(a.time.split(' - ')[0]);
+        const timeB = this.convertTimeToMinutes(b.time.split(' - ')[0]);
+        return timeA - timeB;
+      });
+    }
+
     this.activities = activitiesByDay;
+  }
+
+  // Función para convertir la hora en formato "HH:MM" a minutos desde la medianoche
+  convertTimeToMinutes(time: string): number {
+    const [hours, minutes] = time.split(':').map((part) => parseInt(part, 10));
+    return hours * 60 + minutes;
   }
 
   get carouselTransform(): string {

@@ -40,7 +40,7 @@ export const routes: Routes = [
   { path: 'header-camps', component: HeaderCampComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
   { path: 'home-user', component: HomeUserComponent, canActivate: [AuthGuard], data: { role: 'user' } },
   { path: 'header-summer-camp', component:HeaderSummerCampAdminComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
-  { path: 'header-edit-camp/:id', component:HeaderEditCampComponent, canActivate: [AuthGuard], data: { role: 'user' } },
+  { path: 'header-edit-camp/:id', component:HeaderEditCampComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
   { path: 'header-list', component:HeaderListComponent , canActivate: [AuthGuard], data: { role: 'admin' }},
   { path: 'rules', component:HeaderRulesComponent},
  // { path: 'header-myinfo', component: HeaderUserInformationComponent, canActivate: [AuthGuard], data: { role: 'user' } }, // Ruta para el navbar

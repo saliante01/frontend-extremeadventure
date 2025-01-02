@@ -17,7 +17,7 @@
 
 /* Hacemos que las tarjetas ocupen todo el ancho disponible y tengan márgenes consistentes */
 .card {
-  background-color: #1e1e1e; /* Fondo oscuro para las tarjetas */
+  background-color: #555353; /* Fondo oscuro para las tarjetas */
   color: #fff; /* Texto blanco */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -61,7 +61,7 @@ ng-template #noActivities {
   display: block;
   text-align: center;
   font-size: 1.2rem;
-  color: #6c757d;
+  color: #ffffff;
   margin-top: 50px;
 }
 
