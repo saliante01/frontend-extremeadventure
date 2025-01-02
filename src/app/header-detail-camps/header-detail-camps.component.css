@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden; /* Desactiva el desplazamiento horizontal */
+}
+
 .header-container {
     display: flex; /* Cambiado a Flexbox */
     flex-direction: column;
@@ -100,8 +104,14 @@
   
   /* Media Queries */
   @media (max-width: 768px) {
+    body {
+      overflow-x: hidden; /* Desactiva el desplazamiento horizontal en móviles */
+    }
+
+  
     .header-container {
       padding: 20px; /* Añade espaciado interno */
+      overflow: hidden;
     }
   
     .header-text {
