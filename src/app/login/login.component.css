@@ -66,14 +66,13 @@ button {
   }
 
   .background-image {
-    width: 100%; /* La imagen ocupa el 100% del ancho en pantallas pequeñas */
-    height: 50%; /* Ajusta el alto de la imagen */
+    display: none; /* Oculta la imagen en pantallas pequeñas */
   }
 
   .form-container {
     width: 100%;
     height: auto;
-    padding: 15px;
+    padding: 0px;
   }
 
   .logo {

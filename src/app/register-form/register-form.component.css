@@ -66,15 +66,14 @@
   }
 
   .background-image {
-    height: 30%; /* Imagen aún más pequeña en móviles */
-    width: 100%;
-    object-fit: contain; /* Ajusta proporcionalmente */
+    display: none; /* Oculta la imagen en pantallas pequeñas */
   }
   .form-container {
     width: 100%; 
     padding: 1px;
     grid-template-rows: auto auto; 
     align-items: start;
+    margin-top: 30%;
   }
 
   .card {
