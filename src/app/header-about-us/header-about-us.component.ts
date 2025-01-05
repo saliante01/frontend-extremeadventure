@@ -7,9 +7,10 @@ import { MisionInformationComponent } from "../mision-information/mision-informa
 import { IdeaInformationComponent } from "../idea-information/idea-information.component";
 import { ActivitiesInformationComponent } from "../activities-information/activities-information.component";
 import { AprenderInformacionComponent } from "../aprender-informacion/aprender-informacion.component";
+import { PatrocinadoresComponent } from "../patrocinadores/patrocinadores.component";
 @Component({
   selector: 'app-header-about-us',
-  imports: [NavbarComponent, FooterComponent, SummerSchoolInformationComponent, SummerInformation2Component, MisionInformationComponent, IdeaInformationComponent, ActivitiesInformationComponent, AprenderInformacionComponent],
+  imports: [NavbarComponent, FooterComponent, SummerSchoolInformationComponent, SummerInformation2Component, MisionInformationComponent, IdeaInformationComponent, ActivitiesInformationComponent, AprenderInformacionComponent, PatrocinadoresComponent],
   templateUrl: './header-about-us.component.html',
   styleUrl: './header-about-us.component.css'
 })

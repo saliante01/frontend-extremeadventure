@@ -1,0 +1,104 @@
+/* Fondo gris para el main */
+.patrocinadores-main {
+    background-color: rgba(105, 136, 193, 0.06); /* Color gris claro */
+    padding: 20px;
+    min-height: 100vh; /* Ocupa al menos toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para el título */
+.patrocinadores-title {
+    margin-top: 50px;
+    color: #0c347e; /* Azul */
+    font-size: 3rem; /* Tamaño grande */
+    margin-bottom: 20px;
+}
+
+/* Diseño de la cuadrícula */
+.patrocinadores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px; /* Ancho máximo */
+}
+
+/* Estilo básico para las tarjetas */
+.patrocinador-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre contenido */
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: white; /* Fondo blanco */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para realzar */
+    margin-top: 100px;
+
+    /* Bordes redondeados personalizables */
+    border-top-left-radius: 0px; /* Cambiar este valor para redondear o no la esquina superior izquierda */
+    border-top-right-radius: 30px; /* Cambiar este valor para redondear o no la esquina superior derecha */
+    border-bottom-left-radius: 30px; /* Cambiar este valor para redondear o no la esquina inferior izquierda */
+    border-bottom-right-radius: 0px; /* Cambiar este valor para redondear o no la esquina inferior derecha */
+}
+
+/* Estilo de las imágenes */
+.patrocinador-card img {
+    max-width: 190px;
+    /* Forzando el redondeo de las esquinas */
+    border-top-left-radius: 0px !important;   /* Sin redondeo en esquina superior izquierda */
+    border-top-right-radius: 30px !important; /* Redondeo en esquina superior derecha */
+    border-bottom-left-radius: 30px !important; /* Redondeo en esquina inferior izquierda */
+    border-bottom-right-radius: 0px !important; /* Sin redondeo en esquina inferior derecha */
+    margin-bottom: 0px;
+}
+
+
+/* Media Queries */
+
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    .patrocinadores-main {
+        min-height: 50vh; /* Ocupa al menos toda la pantalla */
+    }
+    .patrocinadores-title {
+        font-size: 2rem; /* Reduce el tamaño del título */
+    }
+
+    .patrocinadores-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajusta las tarjetas para que sean más pequeñas */
+        gap: 10px; /* Reduce el espacio entre las tarjetas */
+    }
+
+    .patrocinador-card {
+        margin-top: 50px; /* Reduce el margen superior */
+        padding: 15px; /* Reduce el padding */
+    }
+
+    .patrocinador-card img {
+        max-width: 120px; /* Reduce el tamaño máximo de las imágenes */
+    }
+}
+
+/* Para pantallas de mayor tamaño, como 1920x1080 */
+@media (min-width: 1200px) {
+    .patrocinadores-title {
+        font-size: 4rem; /* Título más grande */
+    }
+
+    .patrocinadores-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el tamaño de las tarjetas */
+        max-width: 1000px; /* Ancho máximo */
+    }
+
+    .patrocinador-card {
+        margin-top: 150px; /* Ajusta el margen superior */
+        padding: 25px; /* Aumenta el padding */
+    }
+
+    .patrocinador-card img {
+        max-width: 220px; /* Aumenta el tamaño máximo de las imágenes */
+    }
+}

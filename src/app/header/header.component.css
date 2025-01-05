@@ -53,9 +53,9 @@ app-navbar {
 }
 
 .header-text h1 {
-  font-size: clamp(3rem, 8vw, 7rem); /* Tamaño dinámico */
+  font-size: clamp(3rem, 8vw, 4rem); /* Tamaño dinámico */
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom:50px;
   line-height: 1.2; /* Espaciado entre líneas */
 }
 
@@ -84,9 +84,9 @@ app-navbar {
 
 /* Tarjetas */
 .camp-card {
-  width: clamp(200px, 30vw, 350px); /* Ajusta el ancho dinámicamente */
-  height: clamp(100px, 15vw, 150px); /* Ajusta la altura dinámicamente */
-  border-radius: 20px; /* Bordes redondeados */
+  width: clamp(200px, 25vw, 300px); /* Ajusta el ancho dinámicamente */
+  height: clamp(80px, 10vw, 120px); /* Ajusta la altura dinámicamente */
+  border-radius: 50px; /* Bordes redondeados */
   display: flex;
   flex-direction: column;
   justify-content: center;

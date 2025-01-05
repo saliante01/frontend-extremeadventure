@@ -1,0 +1,11 @@
+<main class="patrocinadores-main">
+    <h3 class="patrocinadores-title">Patrocinadores</h3>
+    <div class="patrocinadores-grid">
+      <div class="patrocinador-card" *ngFor="let sponsor of sponsors">
+        <a [href]="sponsor.website" target="_blank" rel="noopener noreferrer">
+          <img [src]="sponsor.logo" [alt]="sponsor.name" />
+        </a>
+      </div>
+    </div>
+  </main>
+  
