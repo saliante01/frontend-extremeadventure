@@ -23,8 +23,13 @@
       <div *ngFor="let registration of registrations">
         <div class="card mt-2">
           <div class="card-body">
+            <p><strong>Nombre del niño:</strong> {{ registration.registration_name }}</p>
             <p><strong>RUT:</strong> {{ registration.rut }}</p>
             <p><strong>Teléfono:</strong> {{ registration.phone_number }}</p>
+            <p>
+              <strong>Condición médica:</strong> 
+              {{ formatMedicalCondition(registration.medical_condition) }}
+            </p>
           </div>
         </div>
       </div>

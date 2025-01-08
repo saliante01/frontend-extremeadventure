@@ -37,4 +37,7 @@ export class ListCourseComponent {
       }
     );
   }
+  formatMedicalCondition(condition: boolean): string {
+    return condition ? 'Posee' : 'No posee';
+  }
 }
