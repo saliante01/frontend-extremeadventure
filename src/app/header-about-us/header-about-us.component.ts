@@ -10,7 +10,7 @@ import { AprenderInformacionComponent } from "../aprender-informacion/aprender-i
 import { PatrocinadoresComponent } from "../patrocinadores/patrocinadores.component";
 @Component({
   selector: 'app-header-about-us',
-  imports: [NavbarComponent, FooterComponent, SummerSchoolInformationComponent, SummerInformation2Component, MisionInformationComponent, IdeaInformationComponent, ActivitiesInformationComponent, AprenderInformacionComponent, PatrocinadoresComponent],
+  imports: [NavbarComponent, FooterComponent, SummerSchoolInformationComponent, SummerInformation2Component, MisionInformationComponent, IdeaInformationComponent, ActivitiesInformationComponent, AprenderInformacionComponent],
   templateUrl: './header-about-us.component.html',
   styleUrl: './header-about-us.component.css'
 })
