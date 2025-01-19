@@ -59,5 +59,5 @@ export const routes: Routes = [
   //  { path: 'header-questions', component: HeaderQuestionsComponent }, // Ruta para el navbar
   //  { path: 'header-adduser', component: HeaderAdduserComponent,canActivate: [AuthGuard], data: { role: 'admin' } }, // Ruta para el navbar
   //  { path: 'header-aboutus', component: HeaderAboutUsComponent }, // Ruta para el navbar
-  //  { path: '**', redirectTo: 'mantenimiento' } // Redirección para rutas no encontradas
+    { path: '**', redirectTo: 'mantenimiento' } // Redirección para rutas no encontradas
 ];
