@@ -31,31 +31,33 @@ import { AuthGuard } from './auth.guard';
 import { HeaderListComponent } from './header-list/header-list.component';
 import { HeaderActivityinfoComponent } from './header-activityinfo/header-activityinfo.component';
 import { MobileInfoComponent } from './mobile-info/mobile-info.component';
+import { MaintenanceComponent } from './maintenance/maintenance.component';
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent }, // Ruta principal
-  { path: 'date-price', component: DatePriceComponent}, // Ruta para el navbar
-  { path: 'home-admin', component: HomeAdminComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
-  { path: 'header-activities', component: HeaderActivitiesComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
-  { path: 'header-weeks', component: HeaderWeeksComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
-  { path: 'header-camps', component: HeaderCampComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
-  { path: 'home-user', component: HomeUserComponent, canActivate: [AuthGuard], data: { role: 'user' } },
-  { path: 'header-summer-camp', component:HeaderSummerCampAdminComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
-  { path: 'header-edit-camp/:id', component:HeaderEditCampComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
-  { path: 'header-list', component:HeaderListComponent , canActivate: [AuthGuard], data: { role: 'admin' }},
-  { path: 'rules', component:HeaderRulesComponent},
+  //  { path: 'home', component: HomeComponent }, // Ruta principal
+  { path: 'mantenimiento', component:MaintenanceComponent},
+  //  { path: 'date-price', component: DatePriceComponent}, // Ruta para el navbar
+  //  { path: 'home-admin', component: HomeAdminComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
+   // { path: 'header-activities', component: HeaderActivitiesComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
+   // { path: 'header-weeks', component: HeaderWeeksComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
+  //  { path: 'header-camps', component: HeaderCampComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
+ //   { path: 'home-user', component: HomeUserComponent, canActivate: [AuthGuard], data: { role: 'user' } },
+  //  { path: 'header-summer-camp', component:HeaderSummerCampAdminComponent,canActivate: [AuthGuard], data: { role: 'admin' }}, // Ruta para el navbar
+  //  { path: 'header-edit-camp/:id', component:HeaderEditCampComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
+  //  { path: 'header-list', component:HeaderListComponent , canActivate: [AuthGuard], data: { role: 'admin' }},
+  //  { path: 'rules', component:HeaderRulesComponent},
  // { path: 'header-myinfo', component: HeaderUserInformationComponent, canActivate: [AuthGuard], data: { role: 'user' } }, // Ruta para el navbar
-  { path: 'header-mycourses', component: HeaderCoursesUserComponent, canActivate: [AuthGuard], data: { role: 'user' } }, // Ruta para el navbar
-  { path: 'header-infoweb', component: MobileInfoComponent, canActivate: [AuthGuard], data: { role: 'user' } }, // Ruta para el navbar
-  { path: 'register-form', component: RegisterFormComponent}, // Ruta para el navbar
-  { path: 'contact', component: ContactComponent}, // Ruta para el navbar
-  { path: 'login', component: LoginComponent }, // Ruta para el navbar
-  { path: 'register', component: RegisterFormComponent }, // Ruta para el navbar
-  { path: 'application-form', component: HeaderApplicationFormComponent }, // Ruta para el navbar
-  { path: 'header-detail-camps/:id', component: HeaderDetailCampsComponent }, // Ruta con parámetro dinámico
-  { path: 'header-activityinfo/:id', component:HeaderActivityinfoComponent }, // Ruta con parámetro dinámico
+  //  { path: 'header-mycourses', component: HeaderCoursesUserComponent, canActivate: [AuthGuard], data: { role: 'user' } }, // Ruta para el navbar
+  //  { path: 'header-infoweb', component: MobileInfoComponent, canActivate: [AuthGuard], data: { role: 'user' } }, // Ruta para el navbar
+  //  { path: 'register-form', component: RegisterFormComponent}, // Ruta para el navbar
+  //  { path: 'contact', component: ContactComponent}, // Ruta para el navbar
+  //  { path: 'login', component: LoginComponent }, // Ruta para el navbar
+  //  { path: 'register', component: RegisterFormComponent }, // Ruta para el navbar
+  //  { path: 'application-form', component: HeaderApplicationFormComponent }, // Ruta para el navbar
+  //  { path: 'header-detail-camps/:id', component: HeaderDetailCampsComponent }, // Ruta con parámetro dinámico
+  // { path: 'header-activityinfo/:id', component:HeaderActivityinfoComponent }, // Ruta con parámetro dinámico
   // Ruta para el navbar
-  { path: 'header-questions', component: HeaderQuestionsComponent }, // Ruta para el navbar
-  { path: 'header-adduser', component: HeaderAdduserComponent,canActivate: [AuthGuard], data: { role: 'admin' } }, // Ruta para el navbar
-  { path: 'header-aboutus', component: HeaderAboutUsComponent }, // Ruta para el navbar
-  { path: '**', redirectTo: 'home' } // Redirección para rutas no encontradas
+  //  { path: 'header-questions', component: HeaderQuestionsComponent }, // Ruta para el navbar
+  //  { path: 'header-adduser', component: HeaderAdduserComponent,canActivate: [AuthGuard], data: { role: 'admin' } }, // Ruta para el navbar
+  //  { path: 'header-aboutus', component: HeaderAboutUsComponent }, // Ruta para el navbar
+  //  { path: '**', redirectTo: 'mantenimiento' } // Redirección para rutas no encontradas
 ];
